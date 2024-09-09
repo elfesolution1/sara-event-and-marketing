@@ -18,5 +18,17 @@
     "tailwindcss": "^3.4.1",
     "eslint": "^8",
     "eslint-config-next": "14.2.8"
-  }
+  },
+  "description": "This project is a web application built for a Ethiotelecom . It leverages **Next.js**, **Tailwind CSS**, **Strapi CMS**, **GraphQL**, **PostgreSQL**, and **Docker** to deliver a scalable, responsive, and modern web experience.",
+  "main": "tailwind.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/digital_addis/ethio_tele_frontend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/digital_addis/ethio_tele_frontend/issues"
+  },
+  "homepage": "https://gitlab.com/digital_addis/ethio_tele_frontend#readme"
 }
