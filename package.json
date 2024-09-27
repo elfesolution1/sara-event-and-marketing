@@ -9,26 +9,36 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-accordion": "^1.2.0",
+    "@radix-ui/react-dropdown-menu": "^2.1.1",
+    "@radix-ui/react-slot": "^1.1.0",
+    "@radix-ui/react-tabs": "^1.1.0",
+    "axios": "^1.7.7",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "formik": "^2.4.6",
+    "framer-motion": "^11.5.5",
+    "lucide-react": "^0.441.0",
+    "next": "14.2.8",
+    "next-themes": "^0.3.0",
+    "qs": "^6.13.0",
     "react": "^18",
+    "react-countup": "^6.5.3",
     "react-dom": "^18",
-    "next": "14.2.8"
+    "react-hot-toast": "^2.4.1",
+    "react-scroll-trigger": "^0.6.14",
+    "swiper": "^11.1.14",
+    "tailwind-merge": "^2.5.2",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
     "eslint": "^8",
-    "eslint-config-next": "14.2.8"
+    "eslint-config-next": "14.2.8",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1"
   },
-  "description": "This project is a web application built for a Ethiotelecom . It leverages **Next.js**, **Tailwind CSS**, **Strapi CMS**, **GraphQL**, **PostgreSQL**, and **Docker** to deliver a scalable, responsive, and modern web experience.",
+  "description": "This project is a web application built for a SaraEvents and Marketing . It leverages **Next.js**, **Tailwind CSS**, **Strapi CMS**, **GraphQL**, **PostgreSQL**, and  to deliver a scalable, responsive, and modern web experience.",
   "main": "tailwind.config.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://gitlab.com/digital_addis/ethio_tele_frontend.git"
-  },
   "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://gitlab.com/digital_addis/ethio_tele_frontend/issues"
-  },
-  "homepage": "https://gitlab.com/digital_addis/ethio_tele_frontend#readme"
+  "license": "ISC"
 }
