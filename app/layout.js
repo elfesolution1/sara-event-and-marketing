@@ -21,7 +21,7 @@ export const metadata = {
 export default async function RootLayout({ children }) {
   const query = `
     {
-     homepage {
+    homepage {
 
      data{
       id
@@ -46,7 +46,54 @@ export default async function RootLayout({ children }) {
             title
           }
           }
-
+					... on ComponentLayoutFooter{
+            footerLogo{
+              data{
+                attributes{
+                  url,
+                  alternativeText
+                }
+              }
+            }
+            description
+            footerSocialMedia{
+              url,
+              title,
+          image{
+            data{
+              attributes{
+                url,
+                alternativeText
+              }
+            }
+          }
+            }
+            eventLink{
+            url,
+              title
+            }
+            propertyLink{
+              url,
+              title
+            }
+            contactInfo{
+              image{
+                data{
+                  attributes{
+                    url,
+                    alternativeText
+                  }
+                }
+              }
+              title
+            }
+           ctaTitle,
+            ctaDescription,
+            ctaButton{
+              title,
+              url
+            }
+          }
         }
       }
     }
@@ -62,6 +109,10 @@ export default async function RootLayout({ children }) {
   const navData = blocks.find(
     (block) => block.__typename === "ComponentLayoutHeader"
   );
+  const footerData = blocks.find(
+    (block) => block.__typename === "ComponentLayoutFooter"
+  );
+  // console.log("data is ", footerData);
   return (
     <html lang="en">
       <body className={`${inter.variable} antialiased`}>
@@ -75,7 +126,7 @@ export default async function RootLayout({ children }) {
           {/* hi */}
           <Header data={navData} />
           {children}
-          <Footer />
+          <Footer data={footerData} />
         </ThemeProvider>
       </body>
     </html>

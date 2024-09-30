@@ -79,16 +79,16 @@ function Service() {
       <section className="hero-section relative w-full h-[50vh]">
         <div className="relative w-full h-full">
           <Image
-            src="https://via.assets.so/img.jpg?w=1000&h=200&tc=blue&bg=gray"
+            src="http://localhost:1337/uploads/2_Y1_A8821_3bda0ac779.webp"
             alt="alt"
             fill
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center p-8">
             <div className="text-white text-left max-w-lg ml-12">
-              <h1 className="text-2xl font-bold mb-4 leading-tight shadow-lg">
+              {/* <h1 className="text-2xl font-bold mb-4 leading-tight shadow-lg">
                 Service
-              </h1>
+              </h1> */}
             </div>
           </div>
         </div>
@@ -96,14 +96,13 @@ function Service() {
       <section className="pb-12 pt-4">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-800 mb-4 dark:text-[#1F995E]">
+          <h1 className="text-4xl font-bold text-gray-800 mb-4 dark:text-white">
             {/* {serviceSection.title} */}
             Our <span className="text-[#1e995e] font-bold">Service</span>
           </h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto dark:text-white">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Perferendis, repellendus nulla. Praesentium architecto corporis qui
-            ab assumenda maiores rem, tempore debitis et
+            Perferendis, repellendus nulla. Praesentium
           </p>
         </div>
 
@@ -115,7 +114,7 @@ function Service() {
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={cardVariants[index % 3]}
-                className="shadow-md"
+                className="shadow-md dark:border dark:border-white dark:hover:shadow-sm dark:hover:shadow-white"
               >
                 <CardHeader className="p-0">
                   <Image

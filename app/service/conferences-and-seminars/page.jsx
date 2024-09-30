@@ -57,16 +57,16 @@ function ConferenceAndSeminars() {
       <section className="hero-section relative w-full h-[50vh]">
         <div className="relative w-full h-full">
           <Image
-            src="https://via.assets.so/img.jpg?w=1000&h=200&tc=blue&bg=gray"
+            src="http://localhost:1337/uploads/3_W7_A9031_57b587d76e.webp"
             alt="alt"
             fill
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center p-8">
             <div className="text-white text-left max-w-lg ml-12">
-              <h1 className="text-2xl font-bold mb-4 leading-tight shadow-lg">
+              {/* <h1 className="text-2xl font-bold mb-4 leading-tight shadow-lg">
                 Conference And Seminars
-              </h1>
+              </h1> */}
             </div>
           </div>
         </div>
@@ -82,7 +82,7 @@ function ConferenceAndSeminars() {
             <div className="h-[50%]">
               {" "}
               <Image
-                src="https://via.assets.so/img.jpg?w=600&h=200&tc=white&bg=gray"
+                src="http://localhost:1337/uploads/3_W7_A8840_f9b3e7408f.webp"
                 alt="alt"
                 width={600}
                 height={200}

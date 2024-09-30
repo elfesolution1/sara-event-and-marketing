@@ -8,6 +8,11 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        "hero-pattern": "url('/public/whyusbg.jpg')",
+        faq: "url('/public/bg2.jpg')",
+        event: "url('/public/bg1.png')",
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },

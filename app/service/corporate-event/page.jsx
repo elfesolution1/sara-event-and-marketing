@@ -1,13 +1,14 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { getStrapiData } from "@/libs/api";
 import Image from "next/image";
 import CloseButton from "@/app/assets/CloseButton.jpg";
-import { useState } from "react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
+
 // Gallery Data
 const galleryImages = [
   {
@@ -52,21 +53,85 @@ function CorporateEvent() {
     setSelectedImage(null);
   };
 
+  const [corporateEventPageData, setCorporateEventPageData] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const query = `
+      {
+    corporateEvent{
+  data{
+    attributes{
+      blocks{
+        __typename
+        ... on ComponentComponentsImage{
+          image{
+            data{
+              attributes{
+                url,
+                alternativeText
+              }
+            }
+          }
+          }
+        ... on ComponentLayoutServiceDetail{
+          serviceTitle{
+            title,
+            secondTitle
+          }
+          serviceImage{
+            data{
+              attributes{
+                url,
+                alternativeText
+              }
+            }
+          }
+          serviceContent
+          serviceGallery{
+            data{
+              attributes{
+                url
+                alternativeText
+              }
+            }
+          }
+          serviceDetail2
+        }
+        }
+      }
+    }
+  }
+      }
+      `;
+      const articles = await getStrapiData(query);
+      setCorporateEventPageData(articles.contactPage);
+    };
+
+    fetchData();
+  }, []);
+  if (!corporateEventPageData) return <div>Loading...</div>;
+
+  const { blocks } = corporateEventPageData;
+  const heroData = blocks.find(
+    (block) => block.__typename === "ComponentComponentsImage"
+  );
+  console.log("corporate ", corporateEventPageData);
   return (
     <>
       <section className="hero-section relative w-full h-[50vh]">
         <div className="relative w-full h-full">
           <Image
-            src="https://via.assets.so/img.jpg?w=1000&h=200&tc=blue&bg=gray"
+            src="http://localhost:1337/uploads/16_9632f7582e.webp"
             alt="alt"
             fill
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center p-8">
             <div className="text-white text-left max-w-lg ml-12">
-              <h1 className="text-2xl font-bold mb-4 leading-tight shadow-lg">
+              {/* <h1 className="text-2xl font-bold mb-4 leading-tight shadow-lg">
                 Corporate Event
-              </h1>
+              </h1> */}
             </div>
           </div>
         </div>
@@ -81,7 +146,7 @@ function CorporateEvent() {
             <div className="h-[50%]">
               {" "}
               <Image
-                src="https://via.assets.so/img.jpg?w=600&h=200&tc=white&bg=gray"
+                src="http://localhost:1337/uploads/8_d9b366b4d9.webp"
                 alt="alt"
                 width={600}
                 height={200}

@@ -24,6 +24,8 @@ import { useState, useEffect } from "react";
 
 import { delay, motion } from "framer-motion";
 import Link from "next/link";
+
+// import BgAchievement from "@/app/assets/whyusbg.jpg";
 export default function Home() {
   const baseImageUrl = "http://localhost:1337";
   // const [counterOn, setCounterOn] = useState(false);
@@ -86,111 +88,60 @@ export default function Home() {
     }),
   };
 
-  const testimonials = [
-    {
-      id: 1,
-      name: "John Doe",
-      title: "Satisfied Customer",
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.",
-      image: "https://via.assets.so/img.jpg?w=300&h=150&tc=white&bg=gray", // Replace with actual image URLs
-    },
-    {
-      id: 2,
-      name: "Jane Smith",
-      title: "Happy Client",
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.",
-      image: "https://via.assets.so/img.jpg?w=300&h=150&tc=white&bg=gray", // Replace with actual image URLs
-    },
-    {
-      id: 3,
-      name: "John Doe",
-      title: "Satisfied Customer",
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.",
-      image: "https://via.assets.so/img.jpg?w=300&h=150&tc=white&bg=gray", // Replace with actual image URLs
-    },
-    // Add more testimonials as needed
-  ];
-  const partners = [
-    {
-      id: 1,
-      src: "https://via.assets.so/img.jpg?w=300&h=150&tc=white&bg=gray",
-      alt: "Partner 1",
-    },
-    {
-      id: 2,
-      src: "https://via.assets.so/img.jpg?w=300&h=150&tc=white&bg=gray",
-      alt: "Partner 2",
-    },
-    {
-      id: 3,
-      src: "https://via.assets.so/img.jpg?w=300&h=150&tc=white&bg=gray",
-      alt: "Partner 3",
-    },
-    {
-      id: 4,
-      src: "https://via.assets.so/img.jpg?w=300&h=150&tc=white&bg=gray",
-      alt: "Partner 4",
-    },
-    {
-      id: 5,
-      src: "https://via.assets.so/img.jpg?w=300&h=150&tc=white&bg=gray",
-      alt: "Partner 4",
-    },
-    {
-      id: 6,
-      src: "https://via.assets.so/img.jpg?w=300&h=150&tc=white&bg=gray",
-      alt: "Partner 4",
-    },
-  ];
-
   const portfolioItems = {
     all: [
       {
         id: 1,
-        src: "https://via.assets.so/img.jpg?w=300&h=150&tc=white&bg=gray",
+        src: "http://localhost:1337/uploads/6_2d90d1d1e3.webp",
         alt: "Wedding Event 1",
       },
       {
         id: 2,
-        src: "https://via.assets.so/img.jpg?w=300&h=150&tc=white&bg=gray",
+        src: "http://localhost:1337/uploads/8_d9b366b4d9.webp",
         alt: "Birthday Event 1",
       },
       {
         id: 3,
-        src: "https://via.assets.so/img.jpg?w=300&h=150&tc=white&bg=gray",
+        src: "http://localhost:1337/uploads/2_Y1_A8816_1fcff462d3.webp",
         alt: "Wedding Event 2",
       },
       {
         id: 4,
-        src: "https://via.assets.so/img.jpg?w=300&h=150&tc=white&bg=gray",
+        src: "http://localhost:1337/uploads/7_d05aa8a5cb.webp",
         alt: "Birthday Event 2",
       },
     ],
     wedding: [
       {
         id: 1,
-        src: "https://via.assets.so/img.jpg?w=300&h=150&tc=white&bg=gray",
+        src: "http://localhost:1337/uploads/7_d05aa8a5cb.webp",
         alt: "Wedding Event 1",
       },
       {
         id: 3,
-        src: "https://via.assets.so/img.jpg?w=300&h=150&tc=white&bg=gray",
+        src: "http://localhost:1337/uploads/2_Y1_A8816_1fcff462d3.webp",
         alt: "Wedding Event 2",
       },
     ],
     birthday: [
       {
         id: 2,
-        src: "https://via.assets.so/img.jpg?w=300&h=150&tc=white&bg=gray",
+        src: "http://localhost:1337/uploads/8_d9b366b4d9.webp",
+        alt: "Birthday Event 1",
+      },
+      {
+        id: 3,
+        src: "http://localhost:1337/uploads/3_W7_A9031_57b587d76e.webp",
         alt: "Birthday Event 1",
       },
       {
         id: 4,
-        src: "https://via.assets.so/img.jpg?w=300&h=150&tc=white&bg=gray",
+        src: "http://localhost:1337/uploads/6_2d90d1d1e3.webp",
         alt: "Birthday Event 2",
       },
     ],
   };
+
   const [counterOn, setCounterOn] = useState(false);
   const [homePageData, setHomePageData] = useState(null);
 
@@ -242,6 +193,7 @@ export default function Home() {
           serviceCard{
             description,
             button,
+            href,
             title,
             image{
               data{
@@ -261,7 +213,42 @@ export default function Home() {
             button
           }
         }
-          
+            ... on ComponentLayoutPartners{
+                  partnerDescription,
+                  partnerTitle{
+                    title,secondTitle
+                  }
+                  partnerImage{
+                    url,
+                    image{
+                      data{
+                        attributes{
+                          url,
+                          alternativeText
+                        }
+                      }
+                    }
+                  }
+                }
+                  ... on ComponentLayoutTestimonial{
+                  testimonailTitle{
+                    title,
+                    secondTitle
+                  }
+                  testimoanilDescription,
+                  testimonialCard{
+                    description,
+                    title,
+                    image{
+                      data{
+                        attributes{
+                          url,
+                          alternativeText
+                        }
+                      }
+                    }
+                  }
+                }
               }
             }
           }
@@ -290,7 +277,13 @@ export default function Home() {
   const acheivementSection = blocks.find(
     (block) => block.__typename === "ComponentLayoutOurAcheivement"
   );
-  console.log("ge ", acheivementSection);
+  const partnerSection = blocks.find(
+    (block) => block.__typename === "ComponentLayoutPartners"
+  );
+  const testimonaiSection = blocks.find(
+    (block) => block.__typename === "ComponentLayoutTestimonial"
+  );
+  console.log("ge ", testimonaiSection.testimonialCard);
 
   return (
     <>
@@ -375,7 +368,7 @@ export default function Home() {
               whileInView="visible"
               viewport={{ once: true }}
               variants={titleSlide}
-              className="text-4xl font-bold text-gray-800 leading-tight dark:text-[#1F995E]"
+              className="text-4xl font-bold text-gray-800 leading-tight dark:text-white"
             >
               {/* {aboutSection.title} */}
               About <span className="font-bold text-[#1e995e]">Us</span>
@@ -423,7 +416,7 @@ export default function Home() {
         <section className="pb-12 pt-4">
           {/* Section Header */}
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-gray-800 mb-4 dark:text-[#1F995E]">
+            <h1 className="text-4xl font-bold text-gray-800 mb-4 dark:text-white">
               {/* {serviceSection.title} */}
               Our <span className="text-[#1e995e] font-bold">Service</span>
             </h1>
@@ -440,7 +433,7 @@ export default function Home() {
                   whileInView="visible"
                   viewport={{ once: true }}
                   variants={cardVariants[index % 3]}
-                  className="shadow-md"
+                  className="shadow-md hover:shadow-[rgba(0,0,0,0.6)] hover:shadow-md  dark:border dark:border-white dark:hover:shadow-[rgba(255,255,255,0.2)] dark:hover:shadow-lg"
                   key={index}
                 >
                   <CardHeader className="p-0">
@@ -453,15 +446,18 @@ export default function Home() {
                     />
                   </CardHeader>
                   <CardContent className="p-6">
-                    <CardTitle className="text-2xl font-semibold text-gray-800 mb-2 dark:text-[#1F995E]">
+                    <CardTitle className="text-xl font-semibold text-gray-800 mb-2 dark:text-[#1F995E]">
                       {item.title}
                     </CardTitle>
                     <CardDescription className="text-gray-600 mb-4 dark:text-white">
                       {item.description}
                     </CardDescription>
-                    <Button className="bg-[#1e995e] text-white dark:hover:bg-white dark:hover:text-[#1e995e] dark:hover:border dark:hover:border-[#1e995e] py-2 px-4 rounded hover:scale-110 hover:shadow-lg transition-all duration-300">
+                    <a
+                      href={item.href}
+                      className="bg-[#1e995e] text-white dark:hover:bg-white dark:hover:text-[#1e995e] dark:hover:border dark:hover:border-[#1e995e] py-2 px-4 rounded hover:scale-110 hover:shadow-lg transition-all duration-300"
+                    >
                       {item.button}
-                    </Button>
+                    </a>
                   </CardContent>
                 </motion.Card>
               );
@@ -470,7 +466,7 @@ export default function Home() {
         </section>
         <section className="pb-12 pt-4">
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-gray-800 mb-4 dark:text-[#1F995E]">
+            <h1 className="text-4xl font-bold text-gray-800 mb-4 dark:text-white">
               {/* {acheivementSection.title} */}
               Our <span className="text-[#1e995e] font-bold">acheivement</span>
             </h1>
@@ -511,29 +507,31 @@ export default function Home() {
             </div>
           </ScrollTrigger>
         </section>
-        <section className="py-12  text-center">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-gray-800 mb-4 dark:text-[#1F995E]">
+        <section className="py-12 text-center mb-10 bg-[url('/bg2.jpg')] dark:bg-none bg-cover bg-center min-h-screen w-full ">
+          <div className="text-center">
+            <h1 className="text-4xl font-bold text-gray-800 mb-4 dark:text-white">
               Our <span className="text-[#1e995e] font-bold">Portfolio</span>
             </h1>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto dark:text-white">
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto dark:text-white dark:font-normal">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore
             </p>
           </div>
           <div className="w-[80%] mx-auto">
-            <Tabs defaultValue="all">
+            <Tabs defaultValue="All">
               {/* Tab Navigation */}
               <TabsList className="flex justify-center space-x-4 bg-stone-50">
-                {["all", "wedding", "birthday"].map((tab) => (
-                  <TabsTrigger key={tab} value={tab}>
-                    {tab.charAt(0).toUpperCase() + tab.slice(1)}
-                  </TabsTrigger>
-                ))}
+                {["All", "Corporate Event", "Conferences and Seminars"].map(
+                  (tab) => (
+                    <TabsTrigger key={tab} value={tab}>
+                      {tab.charAt(0).toUpperCase() + tab.slice(1)}
+                    </TabsTrigger>
+                  )
+                )}
               </TabsList>
 
               {/* Tab Content for All Portfolio */}
-              <TabsContent value="all" className="mt-8 text-3xl">
+              <TabsContent value="All" className="mt-8 text-3xl">
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                   {portfolioItems.all.map((item) => (
                     <div key={item.id} className="relative group">
@@ -542,15 +540,15 @@ export default function Home() {
                         alt={item.alt}
                         width={300}
                         height={300}
-                        className="rounded-lg shadow-md"
+                        className="rounded-lg shadow-md dark:border dark:border-white "
                       />
                     </div>
                   ))}
                 </div>
               </TabsContent>
 
-              {/* Tab Content for Wedding Portfolio */}
-              <TabsContent value="wedding" className="mt-8">
+              {/* Tab Content for Corporate Event Portfolio */}
+              <TabsContent value="Corporate Event" className="mt-8">
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                   {portfolioItems.wedding.map((item) => (
                     <div key={item.id} className="relative group">
@@ -559,15 +557,15 @@ export default function Home() {
                         alt={item.alt}
                         width={300}
                         height={200}
-                        className="rounded-lg shadow-md"
+                        className="rounded-lg shadow-md dark:border dark:border-white "
                       />
                     </div>
                   ))}
                 </div>
               </TabsContent>
 
-              {/* Tab Content for Birthday Portfolio */}
-              <TabsContent value="birthday" className="mt-8">
+              {/* Tab Content for Conferences and Seminars */}
+              <TabsContent value="Conferences and Seminars" className="mt-8">
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                   {portfolioItems.birthday.map((item) => (
                     <div key={item.id} className="relative group">
@@ -576,7 +574,7 @@ export default function Home() {
                         alt={item.alt}
                         width={300}
                         height={200}
-                        className="rounded-lg shadow-md"
+                        className="rounded-lg shadow-md  dark:border dark:border-white "
                       />
                     </div>
                   ))}
@@ -588,13 +586,16 @@ export default function Home() {
         <section className="py-12  text-center">
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold text-gray-800 mb-4 dark:text-[#1F995E]">
-              Our <span className="text-[#1e995e] font-bold ">Partners</span>
+              {partnerSection.partnerTitle.title}{" "}
+              <span className="text-[#1e995e] font-bold ">
+                {partnerSection.partnerTitle.secondTitle}
+              </span>
             </h1>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto dark:text-white">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore
+              {partnerSection.partnerDescription}
             </p>
           </div>
+
           <Swiper
             slidesPerView={5} // Show 5 images at a time
             spaceBetween={30} // Space between slides
@@ -603,7 +604,7 @@ export default function Home() {
             modules={[Autoplay]}
             className="mySwiper w-[80%] mx-auto"
           >
-            {partners.map((partner) => (
+            {partnerSection.partnerImage.map((partner) => (
               <SwiperSlide key={partner.id}>
                 <motion.div
                   initial="hidden"
@@ -611,11 +612,15 @@ export default function Home() {
                   viewport={{ once: true }}
                   variants={logoVariants}
                 >
-                  <img
-                    src={partner.src}
-                    alt={partner.alt}
-                    className="mx-auto h-20 object-contain"
-                  />
+                  {partner.image?.data?.[0]?.url ? (
+                    <img
+                      src={`${baseImageUrl}${partner.image.data[0].url}`}
+                      alt={partner.image.data[0].alternativeText}
+                      className="mx-auto h-20 object-contain hover:cursor-pointer dark:border dark:border-white "
+                    />
+                  ) : (
+                    ""
+                  )}
                 </motion.div>
               </SwiperSlide>
             ))}
@@ -624,37 +629,39 @@ export default function Home() {
         <section className="py-12 ">
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold text-gray-800 mb-4 dark:text-[#1F995E]">
-              What <span className="font-bold text-[#1e995e]">Our Client</span>{" "}
-              says
+              {testimonaiSection.testimonailTitle.title}{" "}
+              <span className="text-[#1e995e] font-bold ">
+                {testimonaiSection.testimonailTitle.secondTitle}
+              </span>
             </h1>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto dark:text-white">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore
+              {testimonaiSection.testimonialDescription}
             </p>
           </div>
-          <div className="w-[80%]  flex lg:flex-row flex-col items-center justify-between  mx-auto px-4  gap-4">
-            {testimonials.map((testimonial, index) => (
+
+          <div className="w-[90%]  flex lg:flex-row flex-col items-center justify-between  mx-auto px-4  gap-4">
+            {testimonaiSection.testimonialCard.map((testimonial, index) => (
               <motion.Card
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={cardVariants[index % 3]}
                 key={index}
-                className="flex flex-col md:flex-row items-center shadow-md"
+                className="flex flex-col md:flex-row items-start shadow-md dark:border dark:border-white dark:rounded-xl pt-4"
               >
-                <CardHeader className=" p-4">
+                <CardHeader className=" w-[30%]">
                   <img
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    className="w-full h-auto shadow-lg "
+                    src={`${baseImageUrl}${testimonial.image.url}`}
+                    alt={testimonial.image.alternativeText}
+                    className="w-full h-auto shadow-lg bg-transparent"
                   />
                 </CardHeader>
-                <CardContent className=" p-4">
+                <CardContent className="w-[70%]">
                   <CardDescription className="text-gray-600 dark:text-white">
-                    {testimonial.text}
+                    {testimonial.description}
                   </CardDescription>
-                  <CardTitle className="text-xl font-semibold mb-2 dark:text-[#1F995E]">
-                    {testimonial.name}
+                  <CardTitle className="text-xl font-semibold dark:text-[#1F995E]">
+                    {testimonial.title}
                   </CardTitle>
                 </CardContent>
               </motion.Card>

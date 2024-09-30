@@ -1,5 +1,6 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { getStrapiData } from "@/libs/api";
 import Image from "next/image";
 
 import { delay, motion } from "framer-motion";
@@ -89,6 +90,72 @@ function Contact() {
     visible: { opacity: 1, x: 0, transition: { duration: 0.8, delay: 0.4 } },
     exit: { opacity: 0, x: -100 },
   };
+  const [contactPageData, setContactPageData] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const query = `
+      {
+      contactPage{
+  data{
+    attributes{
+      blocks{
+        __typename
+        ... on ComponentComponentsImage{
+          image{
+            data{
+              attributes{
+                url
+                alternativeText
+              }
+            }
+          }
+        }
+        ... on ComponentLayoutContactInfo{
+          contactTitle{
+            title,
+            secondTitle
+          }
+          getInTouch,
+          contactDescription
+          contactCard{
+            title,
+            description,
+            button,
+            href
+            image{
+              data{
+                attributes{
+                  url
+                  alternativeText
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+      }
+      `;
+      const articles = await getStrapiData(query);
+      setContactPageData(articles.contactPage);
+    };
+
+    fetchData();
+  }, []);
+  if (!contactPageData) return <div>Loading...</div>;
+
+  const { blocks } = contactPageData;
+  const heroData = blocks.find(
+    (block) => block.__typename === "ComponentComponentsImage"
+  );
+  const contactData = blocks.find(
+    (block) => block.__typename === "ComponentLayoutContactInfo"
+  );
+  console.log("contact ", contactData.getInTouch);
+  const baseImageUrl = "http://localhost:1337";
   return (
     <>
       <section className="hero-section relative w-full h-[50vh]">
@@ -98,27 +165,29 @@ function Contact() {
 
         <div className="relative w-full h-full">
           <Image
-            src="https://via.assets.so/img.jpg?w=1000&h=200&tc=blue&bg=gray"
-            alt="alt"
+            src={`${baseImageUrl}${heroData.image.data[0].url}`}
+            alt={heroData.image.data[0].alternativeText}
             fill
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center p-8">
             <div className="text-white text-left max-w-lg ml-12">
-              <h1 className="text-2xl font-bold mb-4 leading-tight shadow-lg">
+              {/* <h1 className="text-2xl font-bold mb-4 leading-tight shadow-lg">
                 Contact Us
-              </h1>
+              </h1> */}
             </div>
           </div>
         </div>
       </section>
 
       <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-26 mt-10 text-center">
-        Send Us a Message
+        {contactData.contactTitle.title}{" "}
+        <span className="text-[#1e995e]">
+          {contactData.contactTitle.secondTitle}
+        </span>
       </h2>
       <p className="text-center w-[60%] mx-auto">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo natus
-        aliquam laborum! Officia, laudantium illum? fficia, laudantium illum?{" "}
+        {contactData.contactDescription}
       </p>
       <motion.div className="container  mx-auto py-16 px-6 lg:px-8">
         <section className="mb-12 flex items-start justify-around w-[80%]  mx-auto">
@@ -130,91 +199,48 @@ function Contact() {
             className="flex flex-col gap-0 mb-12 w-[35%]"
           >
             <h1 className="text-center font-semibold text-5xl mb-5">
-              Get in touch
+              {contactData.getInTouch}
             </h1>
             <hr className="bg-[linear-gradient(339deg,rgba(9,9,121,0.57)_16%,rgba(30,153,94,0.85)_35%)] font-bold text-2xl h-[2px] " />
-            <div className="bg-white dark:bg-gray-800 px-6  mt-8  flex justify-around items-start gap-3 ">
-              <Image
-                src="https://via.assets.so/img.jpg?w=20&h=20&tc=white&bg=gray"
-                height={20}
-                width={20}
-                alt="phone number"
-              />
-              <div>
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
-                  Address
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300 font-medium text-lg">
-                  Addis Ababa, Ethiopia
-                </p>
-              </div>
-            </div>
-            <div className="bg-white dark:bg-gray-800 px-6  mt-8 flex justify-around items-start gap-3 ">
-              <Image
-                src="https://via.assets.so/img.jpg?w=20&h=20&tc=white&bg=gray"
-                height={20}
-                width={20}
-                alt="phone number"
-              />
-              <div>
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
-                  Email
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300 text-lg font-medium">
-                  <a
-                    href="mailto:contact@saraeventsandmarketing.com"
-                    className="text-blue-600 hover:underline"
+            <main className="flex flex-col items-start justify-around ">
+              {contactData.contactCard.map((item, index) => {
+                return (
+                  <div
+                    className="bg-white dark:bg-gray-800 px-6  mt-8  flex justify-around items-start gap-3"
+                    key={index}
                   >
-                    sales@saraeventsandmarketing.com
-                  </a>
-                  <br />
-                  <a
-                    href="mailto:mikhirtrading@gmail.com"
-                    className="text-blue-600 hover:underline"
-                  >
-                    saraeventsandmarketing@gmail.com
-                  </a>
-                </p>
-              </div>
-            </div>
-            <div className="bg-white dark:bg-gray-800 px-6 mt-8 flex justify-around items-start gap-3 ">
-              <Image
-                src="https://via.assets.so/img.jpg?w=20&h=20&tc=white&bg=gray"
-                height={20}
-                width={20}
-                alt="phone number"
-              />
-              <div>
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
-                  Call Us
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300 text-lg font-medium">
-                  Telephone:{" "}
-                  <a
-                    href="tel:+251116504896"
-                    className="text-blue-600 hover:underline"
-                  >
-                    +251 1234567890
-                  </a>
-                  <br />
-                  Mobile:{" "}
-                  <a
-                    href="tel:+251930644444"
-                    className="text-blue-600 hover:underline"
-                  >
-                    &nbsp;&nbsp;&nbsp;&nbsp; +251 91234567890
-                  </a>
-                  <br />
-                  Whatsapp:{" "}
-                  <a
-                    href="tel:+251911248275"
-                    className="text-blue-600 hover:underline"
-                  >
-                    +251 91234567890
-                  </a>
-                </p>
-              </div>
-            </div>
+                    <Image
+                      src={`${baseImageUrl}${item.image.url}`}
+                      height={20}
+                      width={20}
+                      alt={item.image.alternativeText}
+                    />
+                    <div>
+                      <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                        {item.title}
+                      </h3>
+                      <p className="text-gray-600 dark:text-gray-300 font-medium ">
+                        {item.button}
+                      </p>
+                      {item.description ? (
+                        <p className="text-gray-600 dark:text-gray-300 font-medium ">
+                          {item.description}
+                        </p>
+                      ) : (
+                        ""
+                      )}
+                      {item.href ? (
+                        <p className="text-gray-600 dark:text-gray-300 font-medium ">
+                          {item.href}
+                        </p>
+                      ) : (
+                        ""
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
+            </main>
           </motion.div>
           <div className="w-[80%]">
             <form
