@@ -7,6 +7,11 @@
   --foreground: #171717;
 } */
 
+.disabled-cursor {
+  cursor: not-allowed; /* Change cursor to not-allowed when disabled */
+}
+
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;

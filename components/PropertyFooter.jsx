@@ -6,7 +6,7 @@ import { Button } from "./ui/button";
 
 import { getStrapiData } from "@/libs/api";
 
-const Footer = () => {
+const PropertyFooter = () => {
   const baseLinkUrl = "http://localhost:3000";
   const baseImageUrl = "http://localhost:1337";
   const [isLoading, setIsLoading] = useState(true);
@@ -18,7 +18,7 @@ const Footer = () => {
     const fetchData = async () => {
       const query = `
         {
-         homepage {
+         propertyHome {
             data {
               id
               attributes {
@@ -80,7 +80,7 @@ const Footer = () => {
       `;
       try {
         const response = await getStrapiData(query);
-        const blocks = response?.homepage?.blocks;
+        const blocks = response?.propertyHome?.blocks;
         if (blocks) {
           const footerContent = blocks.find(
             (block) => block.__typename === "ComponentLayoutFooter"
@@ -108,7 +108,8 @@ const Footer = () => {
   return (
     <footer className="text-white pb-10 relative ">
       {/* CTA Section */}
-      <div className="bg-[#1E995E] w-[80%] mx-auto shadow-2xl rounded-2xl flex flex-col md:flex-row justify-between items-center px-6 py-8 md:py-12 -mb-16 relative z-10">
+      <div className="h-10"></div>
+      <div className="bg-[#969963] w-[80%] mx-auto shadow-2xl rounded-2xl flex flex-col md:flex-row justify-between items-center px-6 py-8 md:py-12 -mb-16 relative z-10">
         <div className="space-y-4 w-full md:w-[65%]">
           <h1 className="text-3xl font-medium">{footerData.ctaTitle}</h1>
           <p>{footerData.ctaDescription}</p>
@@ -162,13 +163,13 @@ const Footer = () => {
 
           <main className="w-full md:w-[60%] flex flex-col md:flex-row justify-around items-start gap-2">
             <div className="space-y-3">
-              <h2 className="text-xl text-[#1E995E]">Event Link</h2>
+              <h2 className="text-xl text-[#1E995E] font-medium">Event Link</h2>
               <div className="flex flex-col items-start gap-2 dark:text-white">
                 {footerData.eventLink.map((item, index) => {
                   return (
                     <Link
                       key={index}
-                      className="hover:text-[#1E995E] hover:scale-105 hover:border-b hover:border-b-[#1E995E] pb-[2px]"
+                      className="hover:text-[#1E995E] hover:scale-105 hover:border-b hover:border-b-[#1E995E] pb-[2px] hover:font-medium "
                       href={item.url}
                     >
                       {item.title}
@@ -179,13 +180,15 @@ const Footer = () => {
             </div>
 
             <div className="space-y-3">
-              <h2 className="text-xl text-[#1E995E]">Property Link</h2>
+              <h2 className="text-xl text-[#969963] font-medium underline">
+                Property Link
+              </h2>
               <div className="flex flex-col items-start gap-2 dark:text-white">
                 {footerData.propertyLink.map((item, index) => {
                   return (
                     <Link
                       key={index}
-                      className="hover:text-[#1E995E] hover:scale-105 hover:border-b hover:border-b-[#1E995E] pb-[2px]"
+                      className="hover:text-[#969963] hover:scale-105 hover:border-b hover:border-b-[#969963] pb-[2px] hover:font-medium "
                       href={item.url}
                     >
                       {item.title}
@@ -196,7 +199,9 @@ const Footer = () => {
             </div>
 
             <div className="space-y-2">
-              <h1 className="text-xl text-[#1E995E] mb-5">Contact Info</h1>
+              <h1 className="text-xl text-[#969963] mb-5 font-medium">
+                Contact Info
+              </h1>
               <div className="flex flex-col gap-4 items-start justify-around">
                 {footerData.contactInfo.map((item, index) => {
                   const imageUrl = item.image?.data?.[0]?.url;
@@ -211,7 +216,7 @@ const Footer = () => {
                             alt={altText}
                             width={25}
                             height={25}
-                            className="hover:text-[#1E995E] hover:scale-125 transition-all duration-300 shadow-lg"
+                            className="hover:text-[#969963] hover:scale-125 transition-all duration-300 shadow-lg"
                           />
 
                           <p className="dark:text-white">{item.title}</p>
@@ -228,7 +233,7 @@ const Footer = () => {
         </div>
 
         <div>
-          <hr className="w-[80%] h-[2px] bg-[#1e995e] mx-auto" />
+          <hr className="w-[80%] h-[2px] bg-[#969963] mx-auto" />
           <p className="text-center py-5 text-black dark:text-white">
             Developed by{" "}
             <Link
@@ -245,4 +250,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default PropertyFooter;
