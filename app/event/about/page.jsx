@@ -403,7 +403,7 @@ function About() {
               {/* Card 1 */}
               {whyUsSection.whyUsCard.map((item, index) => {
                 return (
-                  <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 flex items-start justify-around gap-2">
+                  <div key={index} className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 flex items-start justify-around gap-2">
                     <Image
                       src={`${baseImageUrl}${item.image.url}`}
                       height={40}

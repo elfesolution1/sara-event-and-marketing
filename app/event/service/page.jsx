@@ -133,6 +133,7 @@ function Service() {
           {serviceData.ServiceCard.map((item, index) => {
             return (
               <motion.Card
+              key={index}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}

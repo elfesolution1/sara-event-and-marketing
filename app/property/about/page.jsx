@@ -468,7 +468,7 @@ function PropertyAbout() {
                     className="bg-gray-100 dark:bg-[#1f2937] shadow-lg p-6"
                   >
                     <CardContent className="italic text-lg">
-                      "{testimonial?.description}"
+                      {testimonial?.description}
                     </CardContent>
                     <div className="mt-4 text-right">
                       <CardContent>
