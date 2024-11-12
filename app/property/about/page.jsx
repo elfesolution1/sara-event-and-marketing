@@ -119,7 +119,7 @@ function PropertyAbout() {
     setIsLoading(true);
     if (aboutData) {
       const filteredAboutSections =
-        aboutData.propertyAboutUs.data.attributes.blocks.filter(
+        aboutData?.propertyAboutUs?.data?.attributes?.blocks?.filter(
           (item) => item.__typename === "ComponentLayoutPropertyAboutUs"
         );
       setAboutUsSections(filteredAboutSections);
@@ -128,7 +128,7 @@ function PropertyAbout() {
 
     if (aboutData) {
       const filteredMissionSections =
-        aboutData.propertyAboutUs.data.attributes.blocks.filter(
+        aboutData?.propertyAboutUs?.data?.attributes?.blocks?.filter(
           (item) => item.__typename === "ComponentComponentsLink"
         );
       setMissionSection(filteredMissionSections);
@@ -137,7 +137,7 @@ function PropertyAbout() {
 
     if (aboutData) {
       const filteredTeamSections =
-        aboutData.propertyAboutUs.data.attributes.blocks.filter(
+        aboutData?.propertyAboutUs?.data?.attributes?.blocks?.filter(
           (item) => item.__typename === "ComponentLayoutServiceCard"
         );
       setTeamSection(filteredTeamSections);
@@ -146,7 +146,7 @@ function PropertyAbout() {
 
     if (aboutData) {
       const filteredTestimonialSections =
-        aboutData.propertyAboutUs.data.attributes.blocks.filter(
+        aboutData?.propertyAboutUs?.data?.attributes?.blocks?.filter(
           (item) => item.__typename === "ComponentLayoutTestimonial"
         );
       setTestimonialSection(filteredTestimonialSections);
@@ -155,7 +155,7 @@ function PropertyAbout() {
 
     if (aboutData) {
       const filteredMileStoneSections =
-        aboutData.propertyAboutUs.data.attributes.blocks.filter(
+        aboutData?.propertyAboutUs?.data?.attributes?.blocks?.filter(
           (item) => item.__typename === "ComponentLayoutOurAcheivement"
         );
       setMileStoneSections(filteredMileStoneSections);
@@ -163,7 +163,7 @@ function PropertyAbout() {
     }
     if (aboutData) {
       const filteredPartnerSections =
-        aboutData.propertyAboutUs.data.attributes.blocks.filter(
+        aboutData?.propertyAboutUs?.data?.attributes?.blocks?.filter(
           (item) => item.__typename === "ComponentLayoutPartners"
         );
       setPartnerSections(filteredPartnerSections);
@@ -248,48 +248,47 @@ function PropertyAbout() {
 
         {/* Who We Are Section */}
         <section className="py-20 bg-white dark:bg-[#1f2937]">
-          <div className="container mx-auto px-6 md:px-12 lg:px-16">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={titleSlide}
-              className="text-center mb-12"
-            >
-              <h2 className="text-4xl font-bold tracking-tight dark:text-white">
-                {aboutUsSections[0]?.Title?.title}{" "}
-                <span className="text-[#969963] underline">
-                  {aboutUsSections[0]?.Title?.secondTitle}
-                </span>
-              </h2>
-              <p className="mt-4 text-lg text-gray-600 dark:text-white max-w-3xl mx-auto">
-                {aboutUsSections[0]?.description}
-              </p>
-            </motion.div>
+  <div className="container mx-auto px-6 md:px-12 lg:px-16">
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={titleSlide}
+      className="text-center mb-12"
+    >
+      <h2 className="text-4xl font-bold tracking-tight dark:text-white">
+        {aboutUsSections?.[0]?.Title?.title}{" "}
+        <span className="text-[#969963] underline">
+          {aboutUsSections?.[0]?.Title?.secondTitle}
+        </span>
+      </h2>
+      <p className="mt-4 text-lg text-gray-600 dark:text-white max-w-3xl mx-auto">
+        {aboutUsSections?.[0]?.description}
+      </p>
+    </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-              {aboutUsSections[0]?.aboutCard?.map((card, index) => {
-                return (
-                  <motion.Card
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true }}
-                    variants={cardVariants[index % 3]}
-                    key={index}
-                    className="bg-gray-100 dark:bg-transparent dark:border dark:border-gray-100 shadow-lg hover:shadow-2xl transition-all"
-                  >
-                    <CardHeader>
-                      <CardTitle className="text-2xl">{card?.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent className="text-lg">
-                      {card?.secondTitle}
-                    </CardContent>
-                  </motion.Card>
-                );
-              })}
-            </div>
-          </div>
-        </section>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+      {aboutUsSections?.[0]?.aboutCard?.map((card, index) => (
+        <motion.Card
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={cardVariants[index % 3]}
+          key={index}
+          className="bg-gray-100 dark:bg-transparent dark:border dark:border-gray-100 shadow-lg hover:shadow-2xl transition-all"
+        >
+          <CardHeader>
+            <CardTitle className="text-2xl">{card?.title}</CardTitle>
+          </CardHeader>
+          <CardContent className="text-lg">
+            {card?.secondTitle}
+          </CardContent>
+        </motion.Card>
+      ))}
+    </div>
+  </div>
+</section>
+
 
         {/* Our Mission Section */}
         <section className="py-20 bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
@@ -358,8 +357,8 @@ function PropertyAbout() {
                 >
                   {partner?.image?.data?.[0]?.attributes?.url ? (
                     <img
-                      src={`${baseImageUrl}${partner.image.data[0].attributes.url}`}
-                      alt={partner.image.data[0].attributes.alternativeText}
+                      src={`${baseImageUrl}${partner?.image?.data[0]?.attributes?.url}`}
+                      alt={partner?.image?.data[0]?.attributes?.alternativeText}
                       className="mx-auto h-20 object-contain dark:border dark:border-white"
                     />
                   ) : (
@@ -385,7 +384,7 @@ function PropertyAbout() {
               onExit={() => setCounterOn(false)}
             >
               <div className="flex flex-wrap justify-center gap-8 text-center">
-                {mileStoneSections[0]?.acheivementCard.map((card, index) => (
+                {mileStoneSections[0]?.acheivementCard?.map((card, index) => (
                   <motion.Card
                     initial="hidden"
                     whileInView="visible"
@@ -399,11 +398,11 @@ function PropertyAbout() {
                         {counterOn && (
                           <CountUp start={0} end={card?.button} duration={3} />
                         )}
-                        {card.title}
+                        {card?.title}
                       </CardTitle>
                     </CardHeader>
                     <CardContent className="text-lg">
-                      {card.description}
+                      {card?.description}
                     </CardContent>
                   </motion.Card>
                 ))}

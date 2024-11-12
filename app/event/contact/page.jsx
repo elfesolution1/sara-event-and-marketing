@@ -145,7 +145,7 @@ function Contact() {
       `;
       const articles = await getStrapiData(query);
       console.log("cont is ", articles);
-      setContactPageData(articles.contactPage);
+      setContactPageData(articles?.contactPage);
       setIsLoading(true);
     };
 
@@ -165,13 +165,13 @@ function Contact() {
   }
 
   const { blocks } = contactPageData;
-  const heroData = blocks.find(
+  const heroData = blocks?.find(
     (block) => block.__typename === "ComponentComponentsImage"
   );
-  const contactData = blocks.find(
+  const contactData = blocks?.find(
     (block) => block.__typename === "ComponentLayoutContactInfo"
   );
-  console.log("contact ", contactData.getInTouch);
+  console.log("contact ", contactData?.getInTouch);
   const baseImageUrl = process.env.NEXT_PUBLIC_API_URL;
   return (
     <>
@@ -191,8 +191,8 @@ function Contact() {
 
         <div className="relative w-full h-full">
           <img
-            src={`${baseImageUrl}${heroData.image.data[0].url}`}
-            alt={heroData.image.data[0].alternativeText}
+            src={`${baseImageUrl}${heroData?.image?.data[0]?.url}`}
+            alt={heroData?.image?.data[0]?.alternativeText}
             fill
             className="w-full h-full object-cover"
           />
@@ -207,148 +207,146 @@ function Contact() {
       </section>
 
       <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-26 mt-10 text-center">
-        {contactData.contactTitle.title}{" "}
+        {contactData?.contactTitle?.title}{" "}
         <span className="text-[#1e995e]">
-          {contactData.contactTitle.secondTitle}
+          {contactData?.contactTitle?.secondTitle}
         </span>
       </h2>
       <p className="text-center w-[90%] mx-auto md:w-[70%] md:mx-auto lg:w-[60%] lg:mx-auto">
-        {contactData.contactDescription}
+        {contactData?.contactDescription}
       </p>
-      <motion.div className="container  mx-auto py-16 px-6 lg:px-8">
-        <section className="mb-12 flex flex-col md:flex md:flex-col  lg:flex lg:flex-row items-start justify-around lg:w-[80%]  lg:mx-auto ">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={slideFromLeft}
-            className="flex flex-col gap-0 mb-12 w-[100%] lg:w-[43%] "
-          >
-            <h1 className="text-center font-semibold text-5xl mb-5">
-              {contactData.getInTouch}
-            </h1>
-            <hr className="bg-[linear-gradient(339deg,rgba(9,9,121,0.57)_16%,rgba(30,153,94,0.85)_35%)] font-bold text-2xl h-[2px] " />
-            <main className="gap-6 justify-around items-start">
-              {contactData.contactCard.map((item, index) => {
-                return (
-                  <div
-                    className="bg-white dark:bg-gray-800 px-6 mt-8  gap-3"
-                    key={index}
-                  >
-                    <div>
-                      <div className="flex items-center gap-3">
-                        <img
-                          src={`${baseImageUrl}${item.image.url}`}
-                          height={20}
-                          width={20}
-                          alt={item.image.alternativeText}
-                        />
-                        <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
-                          {item.title}
-                        </h3>
-                      </div>
-                      <p className="text-gray-600 dark:text-gray-300 font-medium ">
-                        {item.button}
-                      </p>
-                      {item.description ? (
-                        <p className="text-gray-600 dark:text-gray-300 font-medium ">
-                          {item.description}
-                        </p>
-                      ) : (
-                        ""
-                      )}
-                      {item.href ? (
-                        <p className="text-gray-600 dark:text-gray-300 font-medium ">
-                          {item.href}
-                        </p>
-                      ) : (
-                        ""
-                      )}
-                    </div>
-                  </div>
-                );
-              })}
-            </main>
-          </motion.div>
-          <div className="w-[100%] lg:w-[80%]">
-            <form
-              className=" w-[100%] lg:w-[80%] float-right bg-[linear-gradient(169deg,rgba(30,169,121,0.8)_16%,rgba(30,153,94,0.85)_30%)] dark:bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col space-y-4"
-              onSubmit={formik.handleSubmit}
+      <motion.div className="container mx-auto py-16 px-6 lg:px-8">
+  <section className="mb-12 flex flex-col md:flex md:flex-col lg:flex lg:flex-row items-start justify-around lg:w-[80%] lg:mx-auto">
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={slideFromLeft}
+      className="flex flex-col gap-0 mb-12 w-[100%] lg:w-[43%]"
+    >
+      <h1 className="text-center font-semibold text-5xl mb-5">
+        {contactData?.getInTouch}
+      </h1>
+      <hr className="bg-[linear-gradient(339deg,rgba(9,9,121,0.57)_16%,rgba(30,153,94,0.85)_35%)] font-bold text-2xl h-[2px]" />
+      <main className="gap-6 justify-around items-start">
+        {contactData?.contactCard?.map((item, index) => {
+          return (
+            <div
+              className="bg-white dark:bg-gray-800 px-6 mt-8 gap-3"
+              key={index}
             >
               <div>
-                <label
-                  htmlFor="name"
-                  className="block text-gray-900 dark:text-white font-medium mb-2"
-                >
-                  Name
-                </label>
-                <input
-                  type="text"
-                  name="FullName"
-                  value={formik.values.FullName}
-                  onChange={formik.handleChange}
-                  className="w-full p-3 border border-gray-300 outline-none focus:border-2 focus:border-white  rounded-lg bg-transparent dark:bg-gray-700 dark:text-white"
-                />
+                <div className="flex items-center gap-3">
+                  <img
+                    src={`${baseImageUrl}${item?.image?.url}`}
+                    height={20}
+                    width={20}
+                    alt={item?.image?.alternativeText}
+                  />
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                    {item?.title}
+                  </h3>
+                </div>
+                <p className="text-gray-600 dark:text-gray-300 font-medium">
+                  {item?.button}
+                </p>
+                {item?.description && (
+                  <p className="text-gray-600 dark:text-gray-300 font-medium">
+                    {item.description}
+                  </p>
+                )}
+                {item?.href && (
+                  <p className="text-gray-600 dark:text-gray-300 font-medium">
+                    {item.href}
+                  </p>
+                )}
               </div>
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block text-gray-900 dark:text-white font-medium mb-2"
-                >
-                  Email
-                </label>
-                <input
-                  type="text"
-                  name="Email"
-                  value={formik.values.Email}
-                  onChange={formik.handleChange}
-                  className="w-full p-3 border border-gray-300 outline-none focus:border-white  focus:border-2 bg-transparent rounded-lg dark:bg-gray-700 dark:text-white"
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="message"
-                  className="block text-gray-900 dark:text-white font-medium mb-2"
-                >
-                  Message
-                </label>
-                <textarea
-                  name="Message"
-                  value={formik.values.Message}
-                  onChange={formik.handleChange}
-                  className="w-full p-3 border border-gray-300 outline-none focus:border-2 focus:border-white bg-transparent rounded-lg dark:bg-gray-700 dark:text-white"
-                  rows="5"
-                />
-              </div>
-              <button
-                type="submit"
-                className="w-full p-3 bg-white text-[#1e995e] font-bold rounded-lg hover:scale-110 hover:shadow-lg transition-all duration-300"
-              >
-                Send Message
-              </button>
-            </form>
-          </div>
-        </section>
+            </div>
+          );
+        })}
+      </main>
+    </motion.div>
 
-        {/* Google Maps */}
-        <section>
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
-            Our Location
-          </h2>
-          <div className="relative h-96 w-full mb-12">
-            <iframe
-              src={googleMapsEmbedUrl}
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-              className="rounded-lg shadow-lg"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
-          </div>
-        </section>
-      </motion.div>
+    <div className="w-[100%] lg:w-[80%]">
+      <form
+        className="w-[100%] lg:w-[80%] float-right bg-[linear-gradient(169deg,rgba(30,169,121,0.8)_16%,rgba(30,153,94,0.85)_30%)] dark:bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col space-y-4"
+        onSubmit={formik?.handleSubmit}
+      >
+        <div>
+          <label
+            htmlFor="name"
+            className="block text-gray-900 dark:text-white font-medium mb-2"
+          >
+            Name
+          </label>
+          <input
+            type="text"
+            name="FullName"
+            value={formik?.values?.FullName}
+            onChange={formik?.handleChange}
+            className="w-full p-3 border border-gray-300 outline-none focus:border-2 focus:border-white rounded-lg bg-transparent dark:bg-gray-700 dark:text-white"
+          />
+        </div>
+        <div>
+          <label
+            htmlFor="email"
+            className="block text-gray-900 dark:text-white font-medium mb-2"
+          >
+            Email
+          </label>
+          <input
+            type="text"
+            name="Email"
+            value={formik?.values?.Email}
+            onChange={formik?.handleChange}
+            className="w-full p-3 border border-gray-300 outline-none focus:border-white focus:border-2 bg-transparent rounded-lg dark:bg-gray-700 dark:text-white"
+          />
+        </div>
+        <div>
+          <label
+            htmlFor="message"
+            className="block text-gray-900 dark:text-white font-medium mb-2"
+          >
+            Message
+          </label>
+          <textarea
+            name="Message"
+            value={formik?.values?.Message}
+            onChange={formik?.handleChange}
+            className="w-full p-3 border border-gray-300 outline-none focus:border-2 focus:border-white bg-transparent rounded-lg dark:bg-gray-700 dark:text-white"
+            rows="5"
+          />
+        </div>
+        <button
+          type="submit"
+          className="w-full p-3 bg-white text-[#1e995e] font-bold rounded-lg hover:scale-110 hover:shadow-lg transition-all duration-300"
+        >
+          Send Message
+        </button>
+      </form>
+    </div>
+  </section>
+
+  {/* Google Maps */}
+  <section>
+    <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
+      Our Location
+    </h2>
+    <div className="relative h-96 w-full mb-12">
+      <iframe
+        src={googleMapsEmbedUrl}
+        width="100%"
+        height="100%"
+        style={{ border: 0 }}
+        allowFullScreen=""
+        loading="lazy"
+        className="rounded-lg shadow-lg"
+        referrerPolicy="no-referrer-when-downgrade"
+      />
+    </div>
+  </section>
+</motion.div>
+
       <Footer />
     </>
   );

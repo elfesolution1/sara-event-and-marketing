@@ -90,98 +90,93 @@ const PropertyHeader = () => {
   return (
     <>
       <header className="absolute top-0 left-0 right-0 z-50 bg-translate">
-        <main className="flex justify-between items-center py-5 px-4 md:px-10">
-          <motion.div
-            initial={{ y: -100 }}
-            animate={{ y: 0 }}
-            transition={{ duration: 0.5 }}
+  <main className="flex justify-between items-center py-5 px-4 md:px-10">
+    <motion.div
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      <Link href="/property">
+        <img
+          src={`${baseImageUrl}${headerData?.headerLogo?.url || ''}`}
+          alt={headerData?.headerLogo?.alternativeText || "Company Logo"}
+          width={135.12}
+          height={20}
+        />
+      </Link>
+    </motion.div>
+
+    <motion.div
+      className="flex gap-24 items-center justify-between"
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      <motion.div
+        className="hidden md:flex gap-8 items-center"
+        initial={{ y: -50 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.5, delay: 0.3 }}
+      >
+        {headerData?.menuLink?.map((item, index) => (
+          <Link
+            key={index}
+            href={item?.url || '#'}
+            className={`text-[16px] text-white hover:scale-110 hover:font-medium hover:border-b-2 hover:border-b-[#969963] hover:transition-all hover:duration-300 py-1 ${isActive(item?.url || '')}`}
           >
-            <Link href="/property">
-              <img
-                src={`${baseImageUrl}${headerData?.headerLogo?.url}`}
-                alt={headerData?.headerLogo?.alternativeText || "Company Logo"}
-                width={135.12}
-                height={20}
-              />
-            </Link>
-          </motion.div>
+            {item?.title || 'Menu Item'}
+          </Link>
+        ))}
+      </motion.div>
 
-          <motion.div
-            className="flex gap-24 items-center justify-between"
-            initial={{ y: -100 }}
-            animate={{ y: 0 }}
-            transition={{ duration: 0.5 }}
+      <div className="flex items-center justify-around gap-5">
+        <div className="hidden md:block">
+          <Link
+            href={headerData?.headerContact?.url || '#'}
+            className={`text-[16px] text-white bg-[#969963] border border-[#969963] py-2 px-6 hover:bg-[#969963] hover:text-white rounded-3xl hover:transition-all duration-300 hover:shadow-lg ${isActiveButton('/property/contact')}`}
           >
-            <motion.div
-              className="hidden md:flex gap-8 items-center"
-              initial={{ y: -50 }}
-              animate={{ y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-            >
-              {headerData?.menuLink?.map((item, index) => (
-                <Link
-                  key={index}
-                  href={item.url}
-                  className={`text-[16px] text-white hover:scale-110  hover:font-medium hover:border-b-2 hover:border-b-[#969963] hover:transition-all hover:duration-300 py-1 ${isActive(
-                    `${item.url}`
-                  )}`}
-                >
-                  {item.title}
-                </Link>
-              ))}
-            </motion.div>
+            {headerData?.headerContact?.title || 'Contact Us'}
+          </Link>
+        </div>
 
-            <div className="flex items-center justify-around gap-5">
-              <div className="hidden md:block">
-                <Link
-                  href={headerData?.headerContact?.url}
-                  className={`text-[16px] text-white bg-[#969963] border border-[#969963] py-2 px-6 hover:bg-[#969963] hover:text-white rounded-3xl hover:transition-all duration-300 hover:shadow-lg ${isActiveButton(
-                    "/property/contact"
-                  )}`}
-                >
-                  {headerData?.headerContact?.title}
-                </Link>
-              </div>
+        <ModeToggle />
+      </div>
 
-              <ModeToggle />
-            </div>
-
-            <div className="md:hidden">
-              <button onClick={toggleMenu} aria-label="Toggle Menu">
-                {isMenuOpen ? (
-                  <X className="w-6 h-6" />
-                ) : (
-                  <AlignRight className="w-6 h-6" />
-                )}
-              </button>
-            </div>
-          </motion.div>
-
-          {isMenuOpen && (
-            <motion.div
-              className="absolute top-24 left-0 w-full bg-white dark:bg-gray-900 shadow-lg z-50 md:hidden"
-              initial={{ y: -100 }}
-              animate={{ y: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <nav className="flex flex-col items-center gap-4 py-4">
-                {headerData?.menuLink?.map((item, index) => (
-                  <Link
-                    key={index}
-                    href={item.url}
-                    className={`text-[14px] link-hover py-1 ${isActive(
-                      `${item.url}`
-                    )}`}
-                    onClick={toggleMenu}
-                  >
-                    {item.title}
-                  </Link>
-                ))}
-              </nav>
-            </motion.div>
+      <div className="md:hidden">
+        <button onClick={toggleMenu} aria-label="Toggle Menu">
+          {isMenuOpen ? (
+            <X className="w-6 h-6" />
+          ) : (
+            <AlignRight className="w-6 h-6" />
           )}
-        </main>
-      </header>
+        </button>
+      </div>
+    </motion.div>
+
+    {isMenuOpen && (
+      <motion.div
+        className="absolute top-24 left-0 w-full bg-white dark:bg-gray-900 shadow-lg z-50 md:hidden"
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <nav className="flex flex-col items-center gap-4 py-4">
+          {headerData?.menuLink?.map((item, index) => (
+            <Link
+              key={index}
+              href={item?.url || '#'}
+              className={`text-[14px] link-hover py-1 ${isActive(item?.url || '')}`}
+              onClick={toggleMenu}
+            >
+              {item?.title || 'Menu Item'}
+            </Link>
+          ))}
+        </nav>
+      </motion.div>
+    )}
+  </main>
+</header>
+
     </>
   );
 };

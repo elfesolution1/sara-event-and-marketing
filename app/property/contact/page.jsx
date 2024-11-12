@@ -129,7 +129,7 @@ function ContactPage() {
   useEffect(() => {
     if (contactData && contactData.propertyContactPage) {
       const filteredContactSections =
-        contactData.propertyContactPage.data.attributes.blocks.filter(
+        contactData?.propertyContactPage?.data?.attributes?.blocks?.filter(
           (item) => item.__typename === "ComponentLayoutContactInfo"
         );
       setContactInfo(filteredContactSections);
