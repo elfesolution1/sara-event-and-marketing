@@ -30,7 +30,7 @@ function Page() {
     return (
       <div className="flex justify-center items-center h-screen">
         <img
-          src={`${process.env.NEXT_PUBLIC_API_URL}/uploads/Spin@1x-1.0s-200px-200px (1) (1).gif`}
+          src={`${process.env.NEXT_PUBLIC_API_URL}/uploads/Spin_1x_1_0s_200px_200px_1_1_e2c92a91fb.gif`}
           alt="Loading..."
           className="w-20 h-20"
         />
@@ -74,7 +74,7 @@ function Page() {
             <Card className="w-[350px] mx-auto shadow-md rounded-lg overflow-hidden hover:shadow-[rgba(0,0,0,0.3)] dark:border dark:border-white dark:hover:shadow-[rgba(255,255,255,0.2)] transition-all duration-300">
               <CardHeader className="p-0">
                 <Image
-                  src={`${process.env.NEXT_PUBLIC_API_URL}/uploads/3W7A8840.webp`}
+                  src={`${process.env.NEXT_PUBLIC_API_URL}/uploads/3_W7_A8840_6040c33462.webp`}
                   alt="image"
                   width={500}
                   height={210}
@@ -105,7 +105,7 @@ function Page() {
             <Card className="w-[350px] mx-auto shadow-md rounded-lg overflow-hidden hover:shadow-[rgba(0,0,0,0.3)] dark:border dark:border-white dark:hover:shadow-[rgba(255,255,255,0.2)] transition-all duration-300">
               <CardHeader className="p-0">
                 <Image
-                  src={`${process.env.NEXT_PUBLIC_API_URL}/uploads/photo_5800701578242541043_y (1).jpg`}
+                  src={`${process.env.NEXT_PUBLIC_API_URL}/uploads/photo_5800701578242541043_y_1_19f7c459d5.jpg`}
                   alt="image"
                   width={500}
                   height={210}
