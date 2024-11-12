@@ -175,7 +175,7 @@ function PropertyAbout() {
     return (
       <div className="flex justify-center items-center h-screen">
         <img
-          src={`${process.env.NEXT_PUBLIC_API_URL}/uploads/Spin_1x_1_5s_200px_200px_a756dea2fa.gif`}
+          src="https://sara-events-and-marketing-4fe9cca6bffd.herokuapp.com/uploads/Spin_1x_1_5s_200px_200px_1_db9e13b8d9.gif"
           alt="Loading..."
           className="w-20 h-20"
         />
