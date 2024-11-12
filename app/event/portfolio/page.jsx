@@ -109,7 +109,7 @@ function Portfolio() {
       <section className="hero-section relative w-full h-[70vh]">
         <div className="absolute inset-0 w-full h-full">
           <img
-            src={`${process.env.NEXT_PUBLIC_API_URL}/uploads/10_5fc42d273d.webp`}
+            src="https://sara-events-and-marketing-4fe9cca6bffd.herokuapp.com/uploads/10_96534da41a.webp"
             alt="Gallery"
             fill
             className="w-full h-full object-cover"
