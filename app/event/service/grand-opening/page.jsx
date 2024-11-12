@@ -164,7 +164,7 @@ function GrandOpening() {
           <div>
             <div className="h-[50%]">
               {" "}
-              <Image
+              <img
                 src={`${baseImageUrl}${contactData.serviceImage.url}`}
                 alt={contactData.serviceImage.alternativeText}
                 width={600}
@@ -210,7 +210,7 @@ function GrandOpening() {
                         className="relative group cursor-pointer"
                         onClick={() => openLightbox(image)}
                       >
-                        <Image
+                        <img
                           src={`${baseImageUrl}${image}`}
                           alt={image.alternativeText || "Gallery Image"}
                           width={500}
@@ -232,14 +232,14 @@ function GrandOpening() {
               {selectedImage && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
                   <div className="relative w-[85%] h-[85%]">
-                    <Image
+                    <img
                       src={`${baseImageUrl}${selectedImage}`}
                       alt="Selected Image"
                       fill
                       className="rounded-lg object-cover"
                     />
                   </div>
-                  <Image
+                  <img
                     src={`${process.env.NEXT_PUBLIC_API_URL}/uploads/x_solid_1_78b4f67681.svg`}
                     alt="close button"
                     width={40}
@@ -247,7 +247,7 @@ function GrandOpening() {
                     onClick={closeLightbox}
                     className="absolute top-6 right-6 hover:cursor-pointer bg-white py-3 px-3 rounded-full"
                   />
-                  <Image
+                  <img
                     src={`${process.env.NEXT_PUBLIC_API_URL}/uploads/angle_left_solid_821c86402b.webp`}
                     onClick={goToPrevImage}
                     width={40}
@@ -255,7 +255,7 @@ function GrandOpening() {
                     alt="previous button"
                     className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white text-black p-2 rounded-lg hover:cursor-pointer"
                   />
-                  <Image
+                  <img
                     src={`${process.env.NEXT_PUBLIC_API_URL}/uploads/angle_right_solid_ef40ac7d01.webp`}
                     width={40}
                     height={40}
