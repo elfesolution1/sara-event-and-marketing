@@ -412,10 +412,10 @@ const FindProperty = () => {
           </CardContent>
         </motion.Card>
       ))} */}
-    </section>
-  ) : (
+    {/* </section> */}
+  {/* ) : (
     <div className="text-center mt-10">No properties found.</div>
-  )}
+  )} */}
 </div>
 
       // <PropertyFooter />
