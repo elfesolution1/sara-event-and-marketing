@@ -8,7 +8,7 @@ import { getStrapiData } from "@/libs/api";
 
 const PropertyFooter = () => {
   const baseLinkUrl = "http://localhost:3000";
-  const baseImageUrl = "http://localhost:1337";
+  const baseImageUrl = process.env.NEXT_PUBLIC_API_URL;
   const [isLoading, setIsLoading] = useState(true);
   const [footerData, setFooterData] = useState(null);
   // console.log("da is ", data.contactInfo[0].image);
