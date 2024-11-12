@@ -1,5 +1,5 @@
 export async function getStrapiData(endpoint) {
-  const baseURL = "http://localhost:1337";
+  const baseURL = process.env.NEXT_PUBLIC_API_URL;
   try {
     const response = await fetch(baseURL + endpoint);
     const data = await response.json();
