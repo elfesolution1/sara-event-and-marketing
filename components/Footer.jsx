@@ -127,7 +127,7 @@ const Footer = () => {
         <div className="w-full py-10 text-black flex flex-col md:flex-row items-start justify-around">
           <div className="w-full md:w-[30%] space-y-5">
             <Link href="/">
-              <Image
+              <img
                 src={`${baseImageUrl}${footerData.footerLogo.url}`}
                 alt={`${footerData.footerLogo.alternativeText}`}
                 width={210}
@@ -144,7 +144,7 @@ const Footer = () => {
                 return (
                   <Link href={item.url} key={index}>
                     {imageUrl ? (
-                      <Image
+                      <img
                         src={`${baseImageUrl}${imageUrl}`}
                         alt={altText}
                         width={30}
@@ -206,7 +206,7 @@ const Footer = () => {
                     <div key={index}>
                       {imageUrl ? (
                         <div className="flex items-center  justify-around gap-3">
-                          <Image
+                          <img
                             src={`${baseImageUrl}${imageUrl}`}
                             alt={altText}
                             width={25}
