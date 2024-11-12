@@ -271,7 +271,7 @@ const FindProperty = () => {
         />
       </head>
 
-      <PropertyHeader />
+      {/* <PropertyHeader /> */}
       <section className="hero-section relative w-full h-[70vh]">
         <img
           src={`${process.env.NEXT_PUBLIC_API_URL}/uploads/10_5fc42d273d.webp`}
@@ -293,9 +293,8 @@ const FindProperty = () => {
     <h2 className="text-3xl font-bold text-center mb-6">
       Find Your Dream Property
     </h2>
-    <div className="flex justify-between items-center mb-4">
+    {/* <div className="flex justify-between items-center mb-4">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full">
-        {/* Location Filter */}
         <Select
           value={filters?.location}
           onValueChange={(value) => handleFilterChange(value, "location")}
@@ -312,12 +311,11 @@ const FindProperty = () => {
           </SelectContent>
         </Select>
 
-        {/* City Filter */}
         <Select
           value={filters?.city}
           onValueChange={(value) => handleFilterChange(value, "city")}
-          disabled={!filters?.location} // Disable if location is not selected
-          className={!filters?.location ? "disabled-cursor" : ""} // Add the class conditionally
+          disabled={!filters?.location} 
+          className={!filters?.location ? "disabled-cursor" : ""} 
         >
           <SelectTrigger>
             <SelectValue placeholder="Select City" />
@@ -331,12 +329,11 @@ const FindProperty = () => {
           </SelectContent>
         </Select>
 
-        {/* Sub-City Filter */}
         <Select
           value={filters?.subCity}
           onValueChange={(value) => handleFilterChange(value, "subCity")}
-          disabled={!filters?.city} // Disable if city is not selected
-          className={!filters?.city ? "disabled-cursor" : ""} // Add the class conditionally
+          disabled={!filters?.city} 
+          className={!filters?.city ? "disabled-cursor" : ""} 
         >
           <SelectTrigger>
             <SelectValue placeholder="Sub City" />
@@ -350,7 +347,6 @@ const FindProperty = () => {
           </SelectContent>
         </Select>
 
-        {/* Bedrooms Filter */}
         <Input
           type="number"
           placeholder="Bedrooms"
@@ -367,11 +363,11 @@ const FindProperty = () => {
       >
         Reset
       </button>
-    </div>
+    </div> */}
   </section>
 
   {/* Properties Listing Section */}
-  {propertyLoading ? (
+  {/* {propertyLoading ? (
     <div className="text-center mt-10">Loading properties...</div>
   ) : propertyError ? (
     <div className="text-center mt-10">Error loading properties.</div>
@@ -386,7 +382,6 @@ const FindProperty = () => {
           variants={cardVariants[idx % 3]}
         >
           <div className="relative">
-            {/* Icon overlay in the top-left corner */}
             <div className="absolute top-2 left-2 z-10 bg-white p-1 rounded-full shadow-lg">
               <img
                 src={`${baseImageUrl}${property?.icon?.url}`}
@@ -395,7 +390,6 @@ const FindProperty = () => {
               />
             </div>
 
-            {/* Property image */}
             <img
               src={`${baseImageUrl}${property?.image?.url}`}
               alt={property?.image?.alternativeText}
@@ -417,14 +411,14 @@ const FindProperty = () => {
             </p>
           </CardContent>
         </motion.Card>
-      ))}
+      ))} */}
     </section>
   ) : (
     <div className="text-center mt-10">No properties found.</div>
   )}
 </div>
 
-      <PropertyFooter />
+      // <PropertyFooter />
     </>
   );
 };
