@@ -53,7 +53,7 @@ function ConferenceAndSeminars() {
       <Header />
       <section className="hero-section relative w-full h-[50vh]">
         <div className="relative w-full h-full">
-          <Image
+          <img
             src={`${process.env.NEXT_PUBLIC_API_URL}/uploads/3_W7_A9031_57b587d76e.webp`}
             alt="alt"
             fill
@@ -78,7 +78,7 @@ function ConferenceAndSeminars() {
 
             <div className="h-[50%]">
               {" "}
-              <Image
+              <img
                 src={`${process.env.NEXT_PUBLIC_API_URL}/uploads/3_W7_A8840_f9b3e7408f.webp`}
                 alt="alt"
                 width={600}
@@ -132,7 +132,7 @@ function ConferenceAndSeminars() {
                           className="relative group cursor-pointer"
                           onClick={() => openLightbox(image.src)}
                         >
-                          <Image
+                          <img
                             src={image.src}
                             alt={image.alt}
                             width={500}
@@ -154,14 +154,14 @@ function ConferenceAndSeminars() {
               {selectedImage && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75">
                   <div className="relative">
-                    <Image
+                    <img
                       src={selectedImage}
                       alt="Selected Image"
                       width={900}
                       height={800}
                       className="rounded-lg"
                     />
-                    <Image
+                    <img
                       src={CloseButton}
                       alt="Close Button"
                       width={40}
