@@ -105,7 +105,7 @@ function Portfolio() {
         />
       </head>
 
-      <Header />
+      {/* <Header /> */}
       <section className="hero-section relative w-full h-[70vh]">
         <div className="absolute inset-0 w-full h-full">
           <img

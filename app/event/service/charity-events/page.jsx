@@ -135,7 +135,7 @@ function CharityEvent() {
         />
       </head>
 
-      <Header />
+      {/* <Header /> */}
       <section className="hero-section relative w-full h-[50vh]">
         <div className="relative w-full h-full">
           <img

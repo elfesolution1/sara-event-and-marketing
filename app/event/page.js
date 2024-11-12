@@ -281,6 +281,7 @@ export default function Home() {
       }
       `;
       const articles = await getStrapiData(query);
+      console.log('data is ',articles)
       setHomePageData(articles.homepage);
       setIsLoading(true);
     };
@@ -330,7 +331,7 @@ export default function Home() {
           content="Sara Events and Marketing is the best event organizer in Ethiopia."
         />
       </head>
-      <Header />
+      {/* <Header /> */}
       {/* Hero Section with Swiper */}
       <div className="hero-section relative w-full h-[80vh] mb-0">
         {" "}

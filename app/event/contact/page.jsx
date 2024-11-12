@@ -183,7 +183,7 @@ function Contact() {
         />
       </head>
 
-      <Header />
+      {/* <Header /> */}
       <section className="hero-section relative w-full h-[50vh]">
         <div>
           <Toaster position="top-right" reverseOrder={false} />
