@@ -230,7 +230,7 @@ function PropertyAbout() {
         <PropertyHeader />
         <section className="hero-section relative w-full h-[70vh]">
           <div className="absolute inset-0 w-full h-full">
-            <Image
+            <img
               src={`${process.env.NEXT_PUBLIC_API_URL}/uploads/10_5fc42d273d.webp`}
               alt="alt"
               fill
@@ -428,7 +428,7 @@ function PropertyAbout() {
                 >
                   <div className="relative w-full h-48 mb-4 rounded-lg overflow-hidden">
                     {/* Team Member Image */}
-                    <Image
+                    <img
                       src={`${baseImageUrl}${member?.image?.data?.attributes?.url}`}
                       alt={`${member?.image?.data?.attributes?.alternativeText} image`}
                       // layout="fill"
