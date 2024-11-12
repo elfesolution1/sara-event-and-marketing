@@ -356,7 +356,7 @@ export default function Home() {
           {heroData?.heroImage?.map((item, index) => (
             <SwiperSlide key={index}>
               <div className="relative w-full h-full">
-                <Image
+                <img
                   src={`${baseImageUrl}${item?.image?.data[0]?.url}`}
                   alt={item?.image?.data[0]?.alternativeText}
                   fill
@@ -448,7 +448,7 @@ export default function Home() {
             variants={imageSlideRight}
             className="w-full h-full"
           >
-            <Image
+            <img
               src={`${baseImageUrl}${aboutSection?.aboutImage?.url}`}
               alt={aboutSection?.aboutImage?.alternativeText}
               className="rounded-lg shadow-lg w-full h-[80%] object-cover"
@@ -481,7 +481,7 @@ export default function Home() {
                   key={index}
                 >
                   <CardHeader className="p-0">
-                    <Image
+                    <img
                       src={`${baseImageUrl}${item?.image?.url}`}
                       alt={item?.image?.alternativeText}
                       width={400}
