@@ -4,7 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider"; // Adjust the path as necessary
 import { ApolloProvider } from "@apollo/client";
 // import apolloClient from "@/libs/apolloClient.js";
-import apolloClient from "@/libs/apolloClient";
+import apolloClient from "@/libs/apolloclient";
 
 // Import Inter font from Google Fonts
 const inter = Inter({
