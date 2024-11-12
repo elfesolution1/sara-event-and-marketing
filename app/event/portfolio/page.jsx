@@ -108,7 +108,7 @@ function Portfolio() {
       <Header />
       <section className="hero-section relative w-full h-[70vh]">
         <div className="absolute inset-0 w-full h-full">
-          <Image
+          <img
             src={`${process.env.NEXT_PUBLIC_API_URL}/uploads/10_5fc42d273d.webp`}
             alt="Gallery"
             fill
