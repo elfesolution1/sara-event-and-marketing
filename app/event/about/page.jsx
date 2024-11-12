@@ -265,7 +265,7 @@ function About() {
       <Header />
       <section className="hero-section relative w-full h-[50vh]">
         <div className="relative w-full h-full">
-          <Image
+          <img
             src={`${baseImageUrl}${heroData.image?.data[0]?.url}`}
             alt={heroData.image?.data[0].alternativeText}
             fill
@@ -316,7 +316,7 @@ function About() {
           variants={imageSlideRight}
           className="w-full h-full"
         >
-          <Image
+          <img
             src={`${baseImageUrl}${aboutSection.aboutImage.url}`}
             alt={aboutSection.aboutImage.alternativeText}
             className="rounded-lg shadow-lg w-full h-[80%] object-cover"
@@ -378,7 +378,7 @@ function About() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Column 1 - Image */}
           <div className="flex items-center justify-center">
-            <Image
+            <img
               src={`${baseImageUrl}${whyUsSection.whyUsImage.url}`}
               alt={whyUsSection.whyUsImage.alternativeText}
               width={600}
@@ -404,7 +404,7 @@ function About() {
               {whyUsSection.whyUsCard.map((item, index) => {
                 return (
                   <div key={index} className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 flex items-start justify-around gap-2">
-                    <Image
+                    <img
                       src={`${baseImageUrl}${item.image.url}`}
                       height={40}
                       width={40}
@@ -472,7 +472,7 @@ function About() {
                     className="relative group cursor-pointer"
                     onClick={() => openLightbox(image.url)}
                   >
-                    <Image
+                    <img
                       src={`${baseImageUrl}${image.url}`}
                       alt={image.alt}
                       width={500}
@@ -498,7 +498,7 @@ function About() {
               {" "}
               {/* Set width to 80% and height to 70% */}
               <div className="relative w-full h-full">
-                <Image
+                <img
                   src={`${baseImageUrl}${selectedImage}`}
                   alt="Selected Image"
                   fill
@@ -506,7 +506,7 @@ function About() {
                 />
               </div>
             </div>
-            <Image
+            <img
               src={`${baseImageUrl}${gallerySection.closeButton.url}`}
               alt={gallerySection.closeButton.alternativeText}
               onClick={closeLightbox}
@@ -515,7 +515,7 @@ function About() {
               className="absolute top-6 right-6 hover:cursor-pointer bg-white py-3 px-3 rounded-full"
             />
             {/* Prev Button */}
-            <Image
+            <img
               src={`${baseImageUrl}${prevImage}`}
               onClick={goToPrevImage}
               width={40}
@@ -524,7 +524,7 @@ function About() {
               className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white text-black p-2 rounded-lg hover:cursor-pointer"
             />
 
-            <Image
+            <img
               src={`${baseImageUrl}${nextImage}`}
               alt="next button"
               onClick={goToNextImage}
