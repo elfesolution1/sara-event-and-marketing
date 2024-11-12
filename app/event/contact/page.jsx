@@ -190,7 +190,7 @@ function Contact() {
         </div>
 
         <div className="relative w-full h-full">
-          <Image
+          <img
             src={`${baseImageUrl}${heroData.image.data[0].url}`}
             alt={heroData.image.data[0].alternativeText}
             fill
@@ -237,7 +237,7 @@ function Contact() {
                   >
                     <div>
                       <div className="flex items-center gap-3">
-                        <Image
+                        <img
                           src={`${baseImageUrl}${item.image.url}`}
                           height={20}
                           width={20}
