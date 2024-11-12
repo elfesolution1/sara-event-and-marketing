@@ -100,7 +100,7 @@ const Header = () => {
           transition={{ duration: 0.5 }}
         >
           <Link href="/">
-            <Image
+            <img
               src={`${baseImageUrl}${headerData?.headerLogo?.url}`}
               alt={headerData?.headerLogo?.alternativeText || "Company Logo"}
               width={135.12}
