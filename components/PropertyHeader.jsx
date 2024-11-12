@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 import { getStrapiData } from "@/libs/api";
 
 const PropertyHeader = () => {
-  const baseImageUrl = "http://localhost:1337";
+  const baseImageUrl = process.env.NEXT_PUBLIC_API_URL;
   const pathname = usePathname();
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
