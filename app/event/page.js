@@ -614,7 +614,7 @@ export default function Home() {
             onClick={closeLightbox}
             className="absolute top-4 right-4 text-white text-xl"
           >
-            <XMarkIcon className="w-8 h-8" />
+             &times;
           </button>
           <img
             src={filteredGalleries[selectedImageIndex]?.attributes?.image?.data?.attributes?.url}
