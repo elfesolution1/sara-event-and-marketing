@@ -101,7 +101,7 @@ function Service() {
       <Header />
       <section className="hero-section relative w-full h-[50vh]">
         <div className="relative w-full h-full">
-          <Image
+          <img
             src={`${process.env.NEXT_PUBLIC_API_URL}/uploads/2_Y1_A8821_3bda0ac779.webp`}
             alt="alt"
             fill
@@ -141,7 +141,7 @@ function Service() {
                 className="shadow-md dark:border dark:border-white dark:hover:shadow-sm dark:hover:shadow-white"
               >
                 <CardHeader className="p-0">
-                  <Image
+                  <img
                     src={`${baseImageUrl}${item.image.url}`}
                     alt={item.image.alternativeText}
                     width={400}
