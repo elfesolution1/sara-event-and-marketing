@@ -16,7 +16,7 @@ export function CustomCard({ imageUrl, title, description, buttonText }) {
   return (
     <Card className="w-full max-w-sm overflow-hidden shadow-lg">
       <CardHeader className="p-0">
-        <Image
+        <img
           src={imageUrl}
           alt={title}
           width={400}
