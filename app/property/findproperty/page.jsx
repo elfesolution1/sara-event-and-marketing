@@ -274,7 +274,7 @@ const FindProperty = () => {
 
       <PropertyHeader />
       <section className="hero-section relative w-full h-[70vh]">
-        <Image
+        <img
           src={`${process.env.NEXT_PUBLIC_API_URL}/uploads/10_5fc42d273d.webp`}
           alt="alt"
           fill
