@@ -1,7 +1,7 @@
 // libs/api.js
 import { flattenAttributes } from "@/libs/utils";
 
-const baseURL = "http://localhost:1337"; // Update this with your Strapi URL
+const baseURL = process.env.NEXT_PUBLIC_API_URL; // Update this with your Strapi URL
 
 export async function getStrapiData(query) {
   try {
