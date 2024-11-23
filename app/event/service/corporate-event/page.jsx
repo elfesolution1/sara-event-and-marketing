@@ -17,7 +17,7 @@ import Footer from "@/components/Footer";
 
 function CorporateEvent() {
   const [selectedImage, setSelectedImage] = useState(null);
-  const [corporateEventPageData, setCorporateEventPageData] = useState(null);
+  const [corporateEventPageData, setCorporateEventPageData] = useState({});
   const [isLoading, setIsLoading] = useState(false);
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -167,7 +167,6 @@ function CorporateEvent() {
             width={600}
             height={100}
             className="w-full"
-            priority
           />
         )}
       </div>

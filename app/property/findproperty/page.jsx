@@ -271,7 +271,7 @@ const FindProperty = () => {
         />
       </head>
 
-      {/* <PropertyHeader /> */}
+      <PropertyHeader />
       <section className="hero-section relative w-full h-[70vh]">
         <img
           src={`${process.env.NEXT_PUBLIC_API_URL}/uploads/10_5fc42d273d.webp`}
@@ -293,7 +293,7 @@ const FindProperty = () => {
     <h2 className="text-3xl font-bold text-center mb-6">
       Find Your Dream Property
     </h2>
-    {/* <div className="flex justify-between items-center mb-4">
+    <div className="flex justify-between items-center mb-4">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full">
         <Select
           value={filters?.location}
@@ -363,11 +363,11 @@ const FindProperty = () => {
       >
         Reset
       </button>
-    </div> */}
+    </div>
   </section>
 
   {/* Properties Listing Section */}
-  {/* {propertyLoading ? (
+  {propertyLoading ? (
     <div className="text-center mt-10">Loading properties...</div>
   ) : propertyError ? (
     <div className="text-center mt-10">Error loading properties.</div>
@@ -415,10 +415,10 @@ const FindProperty = () => {
     </section>
   ) : (
     <div className="text-center mt-10">No properties found.</div>
-  )} */}
+  )}
 </div>
 
-       {/* <PropertyFooter /> */}
+       <PropertyFooter />
     </>
   );
 };

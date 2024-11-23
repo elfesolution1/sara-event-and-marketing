@@ -16,7 +16,7 @@ import Footer from "@/components/Footer";
 
 function CharityEvent() {
   const [selectedImage, setSelectedImage] = useState(null);
-  const [eventPageData, setEventPageData] = useState(null);
+  const [eventPageData, setEventPageData] = useState({});
   const [isLoading, setIsLoading] = useState(false);
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -135,7 +135,7 @@ function CharityEvent() {
         />
       </head>
 
-      {/* <Header /> */}
+      <Header />
       <section className="hero-section relative w-full h-[50vh]">
         <div className="relative w-full h-full">
           <img
@@ -171,7 +171,6 @@ function CharityEvent() {
             width={600}
             height={100}
             className="w-full"
-            priority
           />
         )}
       </div>

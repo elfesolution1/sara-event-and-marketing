@@ -17,7 +17,7 @@ import Footer from "@/components/Footer";
 
 function FashionShow() {
   const [selectedImage, setSelectedImage] = useState(null);
-  const [fashioEventPageData, setFashionEventPageData] = useState(null);
+  const [fashioEventPageData, setFashionEventPageData] = useState({});
   const [isLoading, setIsLoading] = useState(false);
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -169,7 +169,6 @@ function FashionShow() {
             width={600}
             height={100}
             className="w-full"
-            priority
           />
         )}
       </div>

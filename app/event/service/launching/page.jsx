@@ -16,7 +16,7 @@ import Footer from "@/components/Footer";
 
 function Launching() {
   const [selectedImage, setSelectedImage] = useState(null);
-  const [launchingEventPageData, setLaunchingEventPageData] = useState(null);
+  const [launchingEventPageData, setLaunchingEventPageData] = useState({});
   const [isLoading, setIsLoading] = useState(false);
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -165,7 +165,6 @@ function Launching() {
             width={600}
             height={100}
             className="w-full"
-            priority
           />
         ) : (
           <div className="w-full h-full bg-gray-300" />

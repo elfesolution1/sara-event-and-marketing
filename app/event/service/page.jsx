@@ -20,7 +20,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 function Service() {
   const baseImageUrl = process.env.NEXT_PUBLIC_API_URL;
-  const [servicePageData, setServicePageData] = useState(null);
+  const [servicePageData, setServicePageData] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
     const fetchData = async () => {

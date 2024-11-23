@@ -45,7 +45,7 @@ function About() {
     setSelectedImage(null);
   };
 
-  const [aboutPageData, setAboutPageData] = useState(null);
+  const [aboutPageData, setAboutPageData] = useState({});
 
   useEffect(() => {
     const fetchData = async () => {
@@ -262,13 +262,12 @@ function About() {
         />
       </head>
 
-      {/* <Header /> */}
+      <Header />
       <section className="hero-section relative w-full h-[50vh]">
         <div className="relative w-full h-full">
           <img
             src={`${baseImageUrl}${heroData.image?.data[0]?.url}`}
             alt={heroData.image?.data[0].alternativeText}
-            fill
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center p-8">
@@ -453,8 +452,8 @@ function About() {
         }}
         className="w-[100%] mx-auto"
       >
-        {(galleryImagess ?? []).map((image) => (
-          <SwiperSlide key={image?.id ?? 'default-key'}>
+        {(galleryImagess ?? []).map((image,index) => (
+          <SwiperSlide key={index}>
             <div
               className="relative group cursor-pointer"
               onClick={() => openLightbox(image?.url ?? '')}
@@ -558,8 +557,8 @@ function About() {
     modules={[Autoplay]}
     className="mySwiper w-[80%] mx-auto"
   >
-    {partnerSection?.partnerImage?.map((partner) => (
-      <SwiperSlide key={partner?.id}>
+    {partnerSection?.partnerImage?.map((partner,index) => (
+      <SwiperSlide key={index}>
         <div>
           {partner?.image?.data?.[0]?.url ? (
             <img

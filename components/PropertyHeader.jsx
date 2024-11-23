@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ModeToggle } from "./ModeToggle";
@@ -121,7 +120,7 @@ const PropertyHeader = () => {
         {headerData?.menuLink?.map((item, index) => (
           <Link
             key={index}
-            href={item?.url || '#'}
+            href={`${item?.url}`}
             className={`text-[16px] text-white hover:scale-110 hover:font-medium hover:border-b-2 hover:border-b-[#969963] hover:transition-all hover:duration-300 py-1 ${isActive(item?.url || '')}`}
           >
             {item?.title || 'Menu Item'}
@@ -132,7 +131,7 @@ const PropertyHeader = () => {
       <div className="flex items-center justify-around gap-5">
         <div className="hidden md:block">
           <Link
-            href={headerData?.headerContact?.url || '#'}
+            href={`${headerData?.headerContact?.url}`}
             className={`text-[16px] text-white bg-[#969963] border border-[#969963] py-2 px-6 hover:bg-[#969963] hover:text-white rounded-3xl hover:transition-all duration-300 hover:shadow-lg ${isActiveButton('/property/contact')}`}
           >
             {headerData?.headerContact?.title || 'Contact Us'}
@@ -164,7 +163,7 @@ const PropertyHeader = () => {
           {headerData?.menuLink?.map((item, index) => (
             <Link
               key={index}
-              href={item?.url || '#'}
+              href={`${item?.url}`}
               className={`text-[14px] link-hover py-1 ${isActive(item?.url || '')}`}
               onClick={toggleMenu}
             >

@@ -1,16 +1,13 @@
 "use client";
-import Image from "next/image";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
-import { Button } from "./ui/button";
 
 import { getStrapiData } from "@/libs/api";
 
 const Footer = () => {
-  const baseLinkUrl = "http://localhost:3000";
   const baseImageUrl = process.env.NEXT_PUBLIC_API_URL;
   const [isLoading, setIsLoading] = useState(true);
-  const [footerData, setFooterData] = useState(null);
+  const [footerData, setFooterData] = useState({});
   // console.log("da is ", data.contactInfo[0].image);
   // const footerLinks = data.footerLink;
 
@@ -115,7 +112,7 @@ const Footer = () => {
     </div>
     <div className="w-full md:w-auto mt-4 md:mt-0 text-center md:text-right">
       <Link
-        href={footerData?.ctaButton?.url}
+        href={`${footerData?.ctaButton?.url}`}
         className="py-3 px-10 rounded-2xl text-2xl hover:shadow-lg hover:scale-110 hover:transition-all hover:duration-300 bg-white text-[#1e995e]"
       >
         {footerData?.ctaButton?.title}
@@ -141,7 +138,7 @@ const Footer = () => {
             const altText = item?.image?.alternativeText || "Social Media Icon";
 
             return (
-              <Link href={item?.url} key={index}>
+              <Link href={`${item?.url}`} key={index}>
                 {imageUrl ? (
                   <img
                     src={`${baseImageUrl}${imageUrl}`}
@@ -167,7 +164,7 @@ const Footer = () => {
               <Link
                 key={index}
                 className="hover:text-[#1E995E] hover:scale-105 hover:border-b hover:border-b-[#1E995E] pb-[2px]"
-                href={item?.url}
+                href={`${item?.url}`}
               >
                 {item?.title}
               </Link>
@@ -182,7 +179,7 @@ const Footer = () => {
               <Link
                 key={index}
                 className="hover:text-[#1E995E] hover:scale-105 hover:border-b hover:border-b-[#1E995E] pb-[2px]"
-                href={item?.url}
+                href={`${item?.url}`}
               >
                 {item?.title}
               </Link>

@@ -16,7 +16,7 @@ import Footer from "@/components/Footer";
 
 function ProductsAndMovie() {
   const [selectedImage, setSelectedImage] = useState(null);
-  const [productEventPageData, setProductEventPageData] = useState(null);
+  const [productEventPageData, setProductEventPageData] = useState({});
   const [isLoading, setIsLoading] = useState(false);
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -167,7 +167,6 @@ function ProductsAndMovie() {
           width={600}
           height={100}
           className="w-full"
-          priority
         />
       </div>
     </div>

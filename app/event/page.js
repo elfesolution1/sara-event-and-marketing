@@ -66,15 +66,23 @@ export default function Home() {
         );
         const data = await response.json();
 
-        setGalleries(data.data);
-        setFilteredGalleries(data.data);
+        if (data?.data) {
+          setGalleries(data.data);
+          setFilteredGalleries(data.data);
+        } else {
+          console.error("No gallery data received");
+        }
+        
         setIsLoading(false); // Updated to set loading to false after data fetch
 
         // Extract unique categories
         const uniqueCategories = [
           "All",
-          ...new Set(data.data.map((gallery) => gallery.attributes.category)),
+          ...new Set(
+            (data?.data || []).map((gallery) => gallery.attributes?.category || "")
+          ),
         ];
+        
         setCategories(uniqueCategories);
       } catch (error) {
         console.error("Error fetching galleries:", error);
@@ -166,7 +174,7 @@ export default function Home() {
   };
 
   const [counterOn, setCounterOn] = useState(false);
-  const [homePageData, setHomePageData] = useState(null);
+  const [homePageData, setHomePageData] = useState({});
 
   const [isLoading, setIsLoading] = useState(false);
 
@@ -281,7 +289,7 @@ export default function Home() {
       }
       `;
       const articles = await getStrapiData(query);
-      console.log('data is ',articles)
+      console.log('data is ',articles?.homepage)
       setHomePageData(articles?.homepage);
       setIsLoading(true);
     };
@@ -303,6 +311,7 @@ export default function Home() {
   // if (!homePageData) return <div>Loading...</div>;
 
   const { blocks } = homePageData;
+  console.log('blocks ',blocks)
   const heroData = blocks?.find(
     (block) => block.__typename === "ComponentLayoutHero"
   );
@@ -331,10 +340,9 @@ export default function Home() {
           content="Sara Events and Marketing is the best event organizer in Ethiopia."
         />
       </head>
-      {/* <Header /> */}
+      <Header />
       {/* Hero Section with Swiper */}
       <div className="hero-section relative w-full h-[80vh] mb-0">
-  {/* Removed bottom margin */}
   <Swiper
     autoplay={{
       delay: 3000,
@@ -353,7 +361,7 @@ export default function Home() {
     modules={[Autoplay, Navigation, Pagination]}
     className="h-[100%]"
   >
-    {heroData?.heroImage?.map((item, index) => {
+    {heroData?.heroImage?.length > 0 && heroData.heroImage.map((item, index) => {
       const { image = {}, title, description, url, button } = item || {};
       const { data = [] } = image;
       const imageUrl = data[0]?.url || '';
@@ -365,7 +373,6 @@ export default function Home() {
             <img
               src={`${baseImageUrl}${imageUrl}`}
               alt={altText}
-              fill
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center p-8">
@@ -413,7 +420,6 @@ export default function Home() {
   {" "}
   {/* Removed margin-top */}
   <section className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-8 items-start py-12">
-    {/* Text Column */}
     <div className="space-y-5">
       <motion.h1
         initial="hidden"
@@ -447,7 +453,6 @@ export default function Home() {
       </motion.a>
     </div>
 
-    {/* Image Column */}
     <motion.div
       initial="hidden"
       whileInView="visible"
@@ -607,22 +612,19 @@ export default function Home() {
         })}
       </div>
 
-      {/* Lightbox */}
-      {selectedImageIndex !== null && (
-        <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
-          <button
-            onClick={closeLightbox}
-            className="absolute top-4 right-4 text-white text-xl"
-          >
-             &times;
-          </button>
-          <img
-            src={filteredGalleries[selectedImageIndex]?.attributes?.image?.data?.attributes?.url}
-            alt={filteredGalleries[selectedImageIndex]?.attributes?.Title}
-            className="max-w-full max-h-full object-contain"
-          />
-        </div>
-      )}
+{selectedImageIndex !== null && filteredGalleries[selectedImageIndex] && (
+  <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
+    <button onClick={closeLightbox} className="absolute top-4 right-4 text-white text-xl">
+      &times;
+    </button>
+    <img
+      src={filteredGalleries[selectedImageIndex]?.attributes?.image?.data?.attributes?.url}
+      alt={filteredGalleries[selectedImageIndex]?.attributes?.Title || "Image"}
+      className="max-w-full max-h-full object-contain"
+    />
+  </div>
+)}
+
     </div>
   </section>
 </main>

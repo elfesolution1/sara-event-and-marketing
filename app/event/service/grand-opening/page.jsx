@@ -16,7 +16,7 @@ import Footer from "@/components/Footer";
 
 function GrandOpening() {
   const [selectedImage, setSelectedImage] = useState(null);
-  const [grandeEventPageData, setGrandEventPageData] = useState(null);
+  const [grandeEventPageData, setGrandEventPageData] = useState({});
   const [isLoading, setIsLoading] = useState(false);
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -168,7 +168,6 @@ function GrandOpening() {
             width={600}
             height={100}
             className="w-full "
-            priority
           />
         )}
       </div>

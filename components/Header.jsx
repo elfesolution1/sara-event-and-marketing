@@ -15,7 +15,7 @@ const Header = () => {
   const pathname = usePathname();
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  const [headerData, setHeaderData] = useState(null);
+  const [headerData, setHeaderData] = useState({});
 
   useEffect(() => {
     const fetchData = async () => {

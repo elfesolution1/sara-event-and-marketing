@@ -92,7 +92,7 @@ function Contact() {
     visible: { opacity: 1, x: 0, transition: { duration: 0.8, delay: 0.4 } },
     exit: { opacity: 0, x: -100 },
   };
-  const [contactPageData, setContactPageData] = useState(null);
+  const [contactPageData, setContactPageData] = useState({});
 
   const [isLoading, setIsLoading] = useState(false);
 
@@ -183,7 +183,7 @@ function Contact() {
         />
       </head>
 
-      {/* <Header /> */}
+      <Header />
       <section className="hero-section relative w-full h-[50vh]">
         <div>
           <Toaster position="top-right" reverseOrder={false} />
