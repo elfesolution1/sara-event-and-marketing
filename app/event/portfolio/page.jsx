@@ -193,6 +193,7 @@ function Portfolio() {
       </button>
       <div className="relative w-[85%] h-[85%] mx-auto">
         <div className="relative w-full h-full">
+          {console.log('selected image, ', filteredGalleries)}
           {filteredGalleries[selectedImageIndex]?.attributes.image?.data?.attributes?.formats?.large?.url || 
             filteredGalleries[selectedImageIndex]?.attributes.image?.data?.attributes?.url
           }
