@@ -267,7 +267,7 @@ function About() {
       <section className="hero-section relative w-full h-[50vh]">
         <div className="relative w-full h-full">
           <img
-            src={`${baseImageUrl}${heroData.image?.data[0]?.url}`}
+            src={`${heroData.image?.data[0]?.url}`}
             alt={heroData.image?.data[0].alternativeText}
             className="w-full h-full object-cover"
           />
@@ -317,7 +317,7 @@ function About() {
           className="w-full h-full"
         >
           <img
-            src={`${baseImageUrl}${aboutSection?.aboutImage?.url}`}
+            src={`${aboutSection?.aboutImage?.url}`}
             alt={aboutSection?.aboutImage?.alternativeText}
             className="rounded-lg shadow-lg w-full h-[80%] object-cover"
             width={500}
@@ -352,7 +352,7 @@ function About() {
                 >
                   <div className="w-[40px] mx-auto">
                     <img
-                      src={`${baseImageUrl}${item?.image?.url}`}
+                      src={`${item?.image?.url}`}
                       alt={item?.image?.alternativeText}
                       className="mx-auto mb-4 "
                     />
@@ -379,7 +379,7 @@ function About() {
           {/* Column 1 - Image */}
           <div className="flex items-center justify-center">
             <img
-              src={`${baseImageUrl}${whyUsSection?.whyUsImage?.url}`}
+              src={`${whyUsSection?.whyUsImage?.url}`}
               alt={whyUsSection?.whyUsImage?.alternativeText}
               width={600}
               height={500}
