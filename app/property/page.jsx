@@ -627,11 +627,11 @@ const PropertyHome = React.memo(function PropertyHome() {
                     className=" dark:bg-gray-700 shadow-lg hover:shadow-2xl transition-all rounded-lg"
                   >
                     <CardHeader>
-                      <CardTitle className="text-2xl font-semibold">
+                      <CardTitle className="text-2xl font-semibold dark:text-white ">
                         {item?.title}
                       </CardTitle>
                     </CardHeader>
-                    <CardContent className="text-lg">
+                    <CardContent className="text-lg dark:text-white ">
                       {item?.secondTitle}
                     </CardContent>
                   </motion.Card>
