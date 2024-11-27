@@ -405,7 +405,7 @@ function About() {
                 return (
                   <div key={index} className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 flex items-start justify-around gap-2">
                     <img
-                      src={`${baseImageUrl}${item?.image?.url}`}
+                      src={`${item?.image?.url}`}
                       height={40}
                       width={40}
                       alt={item?.image?.alternativeText}
@@ -460,7 +460,7 @@ function About() {
               onClick={() => openLightbox(image?.url ?? '')}
             >
               <img
-                src={`${baseImageUrl}${image?.url ?? ''}`}
+                src={`${image?.url ?? ''}`}
                 alt={image?.alt ?? 'Image'}
                 width={500}
                 height={300}
@@ -482,7 +482,7 @@ function About() {
       <div className="relative w-[85%] h-[85%]">
         <div className="relative w-full h-full">
           <img
-            src={`${baseImageUrl}${selectedImage}`}
+            src={`${selectedImage}`}
             alt="Selected Image"
             fill
             className="rounded-lg object-cover"
@@ -490,7 +490,7 @@ function About() {
         </div>
       </div>
       <img
-        src={`${baseImageUrl}${gallerySection?.closeButton?.url ?? ''}`}
+        src={`${gallerySection?.closeButton?.url ?? ''}`}
         alt={gallerySection?.closeButton?.alternativeText ?? 'Close Button'}
         onClick={closeLightbox}
         width={40}
@@ -499,7 +499,7 @@ function About() {
       />
       {/* Prev Button */}
       <img
-        src={`${baseImageUrl}${prevImage ?? ''}`}
+        src={`${prevImage ?? ''}`}
         onClick={goToPrevImage}
         width={40}
         height={40}
@@ -508,7 +508,7 @@ function About() {
       />
 
       <img
-        src={`${baseImageUrl}${nextImage ?? ''}`}
+        src={`${nextImage ?? ''}`}
         alt="next button"
         onClick={goToNextImage}
         height={40}
@@ -563,7 +563,7 @@ function About() {
         <div>
           {partner?.image?.data?.[0]?.url ? (
             <img
-              src={`${baseImageUrl}${partner.image.data[0].url}`}
+              src={`${partner.image.data[0].url}`}
               alt={partner.image.data[0].alternativeText || "Partner image"}
               className="mx-auto h-20 object-contain dark:border dark:border-white"
             />
