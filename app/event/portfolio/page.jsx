@@ -151,7 +151,7 @@ function Portfolio() {
       const imageUrl = image
         ? `${image.data.attributes.formats.small.url || image.url}`
         : null;
-
+      console.log('image url , ', imageUrl);
       return (
         <div
           key={gallery.id}
