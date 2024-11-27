@@ -561,7 +561,7 @@ const PropertyHome = React.memo(function PropertyHome() {
             {/* Icon overlay in the top-left corner */}
             <div className="absolute top-2 left-2 z-10 bg-white dark:bg-[#1f2937] p-1 rounded-full shadow-lg">
               <img
-                src={`${baseImageUrl}${property?.icon?.url}`}
+                src={`${property?.icon?.url}`}
                 alt={property?.icon?.alternativeText}
                 className="w-6 h-6 object-cover"
               />
@@ -569,7 +569,7 @@ const PropertyHome = React.memo(function PropertyHome() {
 
             {/* Property image */}
             <img
-              src={`${baseImageUrl}${property?.image?.url}`}
+              src={`${property?.image?.url}`}
               alt={property?.image?.alternativeText}
               className="w-full h-64 object-cover rounded-t-lg"
             />
@@ -732,7 +732,7 @@ const PropertyHome = React.memo(function PropertyHome() {
         >
           {partner?.image?.data?.[0]?.attributes?.url ? (
             <img
-              src={`${baseImageUrl}${partner?.image?.data?.[0]?.attributes?.url}`}
+              src={`${partner?.image?.data?.[0]?.attributes?.url}`}
               alt={partner?.image?.data?.[0]?.attributes?.alternativeText}
               className="mx-auto h-20 object-contain dark:border dark:border-white"
             />
