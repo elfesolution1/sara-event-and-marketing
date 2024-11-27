@@ -251,7 +251,7 @@ function About() {
     setSelectedImage(galleryImagess[prevIndex].url); // Use galleryImagess
     setCurrentIndex(prevIndex);
   };
-  const baseImageUrl = process.env.NEXT_PUBLIC_API_URL;
+  const baseImageUrl = "https://res.cloudinary.com/dkqlrnz6r";
   return (
     <>
       <head>
