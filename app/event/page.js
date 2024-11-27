@@ -27,6 +27,7 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
+import { Calendar, MapPin } from "lucide-react";
 export default function Home() {
   const baseImageUrl = process.env.NEXT_PUBLIC_API_URL;
   const [selectedImageIndex, setSelectedImageIndex] = useState(null);
@@ -331,6 +332,32 @@ export default function Home() {
     (block) => block.__typename === "ComponentLayoutTestimonial"
   );
 
+  const events = [
+    {
+      id: 1,
+      title: "Tech Conference 2024",
+      date: "2024-12-15", // Use ISO format for easier comparison
+      location: "Addis Ababa, Ethiopia",
+      description: "Join us for a day of insightful talks and networking.",
+    },
+    {
+      id: 2,
+      title: "Annual Business Expo",
+      date: "2023-04-20",
+      location: "Nairobi, Kenya",
+      description: "Explore innovative business solutions and meet leaders.",
+    },
+  ];
+  const isUpcoming = (eventDate) => {
+    const currentDate = new Date();
+    const eventDateObj = new Date(eventDate);
+    return eventDateObj >= currentDate;
+  };
+  
+  
+  const upcomingEvents = events.filter((event) => isUpcoming(event.date));
+
+
   return (
     <>
       <head>
@@ -413,7 +440,48 @@ export default function Home() {
     })}
   </Swiper>
 </div>
-
+<section className="pb-16 pt-10 bg-[url('/bg2.jpg')]">
+  <div className="max-w-7xl mx-auto px-6 sm:px-8">
+    <motion.h1
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={{
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0 },
+      }}
+      className="text-4xl font-bold text-gray-800 text-center mb-5 leading-tight dark:text-white"
+    >
+      Upcoming <span className="font-bold text-[#137a70]">Events</span>
+    </motion.h1>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-5 w-[90%] mx-auto">
+      {upcomingEvents.length > 0 ? (
+        upcomingEvents.map((event) => (
+          <div
+            key={event.id}
+            className="relative bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-lg shadow-xl p-6 transition-transform transform hover:scale-105"
+          >
+            <h3 className="text-2xl font-bold mb-2">{event.title}</h3>
+            <div className="flex items-center mb-2">
+              <Calendar className="mr-2 w-5 h-5" />
+              <span>{new Date(event.date).toLocaleDateString()}</span>
+            </div>
+            <div className="flex items-center mb-4">
+              <MapPin className="mr-2 w-5 h-5" />
+              <span>{event.location}</span>
+            </div>
+            <p className="mb-6">{event.description}</p>
+            <div className="absolute inset-0 rounded-lg pointer-events-none border border-white/20"></div>
+          </div>
+        ))
+      ) : (
+        <p className="text-center text-gray-500 dark:text-gray-300">
+          No upcoming events.
+        </p>
+      )}
+    </div>
+  </div>
+</section>;
 
       {/* Main Section */}
       <main className="mt-0">
