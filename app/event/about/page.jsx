@@ -194,6 +194,7 @@ function About() {
       `;
       const articles = await getStrapiData(query);
       setAboutPageData(articles?.aboutPage);
+      console.log('abouttt',articles?.aboutPage);
       setIsLoading(true);
     };
 
