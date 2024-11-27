@@ -93,7 +93,7 @@ const Header = () => {
 
   return (
     <header>
-  <main className="bg-[#D9D9D921] flex justify-between items-center px-4 md:px-10">
+  <main className="bg-[#D9D9D921] flex justify-between items-center py-4 px-4 md:px-10">
     <motion.div
       initial={{ y: -100 }}
       animate={{ y: 0 }}
