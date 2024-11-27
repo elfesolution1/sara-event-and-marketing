@@ -431,50 +431,50 @@ function About() {
 
       {/* Gallery Section */}
       <section className="py-16 dark:bg-gray-900">
-  <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-    <h2 className="text-4xl font-extrabold text-gray-900 dark:text-white mb-12">
-      {gallerySection?.galleryTitle?.title ?? 'Default Title'}{" "}
-      <span className="text-[#1e995e] font-bold">
-        {gallerySection?.galleryTitle?.secondTitle ?? 'Default Second Title'}
-      </span>
-    </h2>
-    <div>
-      <Swiper
-        slidesPerView={3}
-        spaceBetween={30}
-        autoplay={{ delay: 3000 }}
-        loop={true}
-        modules={[Autoplay]}
-        breakpoints={{
-          320: { slidesPerView: 2, spaceBetween: 20 },
-          640: { slidesPerView: 2, spaceBetween: 20 },
-          768: { slidesPerView: 4, spaceBetween: 40 },
-          1024: { slidesPerView: 5, spaceBetween: 50 },
-        }}
-        className="w-[100%] mx-auto"
-      >
-        {(galleryImagess ?? []).map((image,index) => (
-          <SwiperSlide key={index}>
-            <div
-              className="relative group cursor-pointer"
-              onClick={() => openLightbox(image?.url ?? '')}
-            >
-              <img
-                src={`${image?.url ?? ''}`}
-                alt={image?.alt ?? 'Image'}
-                width={500}
-                height={300}
-                className="rounded-lg shadow-lg dark:border dark:border-white w-full h-full object-cover group-hover:opacity-75"
-              />
-              <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <span className="text-white font-bold text-lg">View Full Image</span>
-              </div>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </div>
-  </div>
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+        <h2 className="text-4xl font-extrabold text-gray-900 dark:text-white mb-12">
+          {gallerySection?.galleryTitle?.title ?? 'Default Title'}{" "}
+          <span className="text-[#1e995e] font-bold">
+            {gallerySection?.galleryTitle?.secondTitle ?? 'Default Second Title'}
+          </span>
+        </h2>
+        <div>
+          <Swiper
+            slidesPerView={3}
+            spaceBetween={30}
+            autoplay={{ delay: 3000 }}
+            loop={true}
+            modules={[Autoplay]}
+            breakpoints={{
+              320: { slidesPerView: 2, spaceBetween: 20 },
+              640: { slidesPerView: 2, spaceBetween: 20 },
+              768: { slidesPerView: 3, spaceBetween: 40 },
+              1024: { slidesPerView: 3, spaceBetween: 50 },
+            }}
+            className="w-[100%] mx-auto"
+          >
+            {(galleryImagess ?? []).map((image,index) => (
+              <SwiperSlide key={index}>
+                <div
+                  className="relative group cursor-pointer"
+                  onClick={() => openLightbox(image?.url ?? '')}
+                >
+                  <img
+                    src={`${image?.url ?? ''}`}
+                    alt={image?.alt ?? 'Image'}
+                    width={500}
+                    height={300}
+                    className="rounded-lg shadow-lg dark:border dark:border-white w-full h-full object-cover group-hover:opacity-75"
+                  />
+                  <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span className="text-white font-bold text-lg">View Full Image</span>
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+        </div>
 
   {/* Lightbox Modal */}
   {selectedImage && (

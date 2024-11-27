@@ -127,7 +127,7 @@ function Launching() {
   return (
     <>
       <head>
-        <title>Launching | Sara Events and Marketing</title>
+        <title>Launching Event | Sara Events and Marketing</title>
         <meta
           name="description"
           content="Sara Events and Marketing is the best event organizer in Ethiopia."
@@ -138,54 +138,61 @@ function Launching() {
       <section className="hero-section relative w-full h-[50vh]">
         <div className="relative w-full h-full">
           <img
-            src={`${baseImageUrl}${heroData?.image?.data[0]?.url}`}
-            alt={heroData?.image?.data[0]?.alternativeText}
-            fill
+            src="https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732695348/background_2_673f9666d7.jpg"
+            alt="background"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center p-8">
-            <div className="text-white text-left max-w-lg ml-12"></div>
+            <div className='flex items-center justify-center  w-full'>
+              <h1 className="text-2xl font-bold mb-4 text-white leading-tight w-full text-center uppercase">
+                 {contactData?.serviceTitle?.title}
+                  <span className=" font-bold ">
+                    {contactData?.serviceTitle?.secondTitle}
+                  </span>
+              </h1>
+            </div>
           </div>
         </div>
       </section>
-      <h1 className="text-center font-medium text-4xl my-4">
-        {contactData?.serviceTitle?.title}
-        <span className="text-[#1e995e] font-bold ">
-          {contactData?.serviceTitle?.secondTitle}
-        </span>
-      </h1>
+     
       <section className="mt-10 mb-20">
   <div className="w-[96%] lg:w-[70%] pb-10 mx-auto shadow-lg dark:border border-[rgba(255,255,255,0.6)]">
     <div>
       <div className="h-[50%]">
-        {contactData?.serviceImage?.url ? (
+        {/* Safely accessing image properties */}
+        {contactData?.serviceImage?.url && (
           <img
-            src={`${baseImageUrl}${contactData.serviceImage.url}`}
-            alt={contactData.serviceImage.alternativeText || 'Service Image'}
-            width={600}
-            height={100}
-            className="w-full"
+            src={`${contactData.serviceImage.url}`}
+            alt={contactData.serviceImage.alternativeText || "Service Image"}
+            className="w-full h-[400px] object-cover "
           />
-        ) : (
-          <div className="w-full h-full bg-gray-300" />
         )}
       </div>
     </div>
     <main className="mt-5 lg:px-4 px-2">
+      {/* Safely accessing serviceContent */}
       {serviceContent?.[0]?.children?.[0]?.text && (
-        <p className="font-normal text-lg text-justify mb-2" style={{ letterSpacing: "1px" }}>
+        <p
+          className="font-normal text-lg text-justify mb-2"
+          style={{ letterSpacing: "1px" }}
+        >
           {serviceContent[0].children[0].text}
         </p>
       )}
 
       {serviceContent?.[1]?.children?.[0]?.text && (
-        <p className="font-normal text-lg text-justify mb-1" style={{ letterSpacing: "1px" }}>
+        <p
+          className="font-normal text-lg text-justify mb-1"
+          style={{ letterSpacing: "1px" }}
+        >
           {serviceContent[1].children[0].text}
         </p>
       )}
 
-      <section className="py-16 dark:bg-gray-900">
+<section className="py-16 dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+        
+        <div>
           <Swiper
             slidesPerView={3}
             spaceBetween={30}
@@ -196,16 +203,22 @@ function Launching() {
               320: { slidesPerView: 2, spaceBetween: 20 },
               640: { slidesPerView: 2, spaceBetween: 20 },
               768: { slidesPerView: 3, spaceBetween: 40 },
-              1024: { slidesPerView: 3, spaceBetween: 50 },
+              1024: { slidesPerView: 3, spaceBetween: 30 },
             }}
             className="w-[100%] mx-auto"
           >
-            {galleryImages?.map((image, index) => (
+            {(galleryImages ?? []).map((image,index) => (
               <SwiperSlide key={index}>
-                <div className="relative group cursor-pointer" onClick={() => openLightbox(image)}>
+                <div
+                  className="relative group cursor-pointer"
+                  onClick={() => openLightbox(image ?? '')}
+                >
+                  {
+              console.log('galler is is ',image)
+                  }
                   <img
-                    src={`${baseImageUrl}${image}`}
-                    alt={image.alternativeText || 'Gallery Image'}
+                    src={`${image ?? ''}`}
+                    alt={image?.alt ?? 'Image'}
                     width={500}
                     height={300}
                     className="rounded-lg shadow-lg dark:border dark:border-white w-full h-full object-cover group-hover:opacity-75"
@@ -218,54 +231,65 @@ function Launching() {
             ))}
           </Swiper>
         </div>
+        </div>
 
-        {/* Lightbox */}
-        {selectedImage && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-            <div className="relative w-[85%] h-[85%]">
-              <img
-                src={`${baseImageUrl}${selectedImage}`}
-                alt="Selected Image"
-                fill
-                className="rounded-lg object-cover"
-              />
-            </div>
-            <img
-              src={`${process.env.NEXT_PUBLIC_API_URL}/uploads/x_solid_1_78b4f67681.svg`}
-              alt="close button"
-              width={40}
-              height={40}
-              onClick={closeLightbox}
-              className="absolute top-6 right-6 hover:cursor-pointer bg-white py-3 px-3 rounded-full"
-            />
-            <img
-              src={`${process.env.NEXT_PUBLIC_API_URL}/uploads/angle_left_solid_821c86402b.webp`}
-              onClick={goToPrevImage}
-              width={40}
-              height={40}
-              alt="previous button"
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white text-black p-2 rounded-lg hover:cursor-pointer"
-            />
-            <img
-              src={`${process.env.NEXT_PUBLIC_API_URL}/uploads/angle_right_solid_ef40ac7d01.webp`}
-              width={40}
-              height={40}
-              alt="next button"
-              onClick={goToNextImage}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white text-black p-2 rounded-lg hover:cursor-pointer"
-            />
-          </div>
-        )}
-      </section>
+  {/* Lightbox Modal */}
+  {selectedImage && (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+      <div className="relative w-[85%] h-[85%]">
+        <div className="relative w-full h-full">
+          <img
+            src={`${selectedImage}`}
+            alt="Selected Image"
+            className="rounded-lg object-cover"
+          />
+        </div>
+      </div>
+      <img
+        src="https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732648286/x_solid_1_1_328c7cb152.svg"
+        alt='Close Button'
+        onClick={closeLightbox}
+        width={40}
+        height={40}
+        className="absolute top-6 right-6 hover:cursor-pointer bg-white py-3 px-3 rounded-full"
+      />
+      {/* Prev Button */}
+      <img
+        src="https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732648282/angle_left_solid_1_aff896a75a.webp"
+        onClick={goToPrevImage}
+        width={40}
+        height={40}
+        alt="previous button"
+        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white text-black p-2 rounded-lg hover:cursor-pointer"
+      />
 
+      <img
+        src="https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732648282/angle_right_solid_1_6d6e7dbde6.webp"
+        alt="next button"
+        onClick={goToNextImage}
+        height={40}
+        width={40}
+        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white text-black p-2 rounded-lg hover:cursor-pointer"
+      />
+    </div>
+  )}
+</section>
+
+      {/* Safely accessing serviceDetail */}
       {serviceDetail?.[0]?.children?.[0]?.text && (
-        <p className="font-normal text-lg text-justify mb-2" style={{ letterSpacing: "1px" }}>
+        <p
+          className="font-normal text-lg text-justify mb-2"
+          style={{ letterSpacing: "1px" }}
+        >
           {serviceDetail[0].children[0].text}
         </p>
       )}
 
       {serviceDetail?.[1]?.children?.[0]?.text && (
-        <p className="font-normal text-lg text-justify mb-2" style={{ letterSpacing: "1px" }}>
+        <p
+          className="font-normal text-lg text-justify mb-2"
+          style={{ letterSpacing: "1px" }}
+        >
           {serviceDetail[1].children[0].text}
         </p>
       )}
