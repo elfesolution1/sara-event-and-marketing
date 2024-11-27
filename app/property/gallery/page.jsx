@@ -87,7 +87,7 @@ function Gallery() {
     return (
       <div className="flex justify-center items-center h-screen">
         <img
-          src="https://sara-events-and-marketing-4fe9cca6bffd.herokuapp.com/uploads/Spin_1x_1_5s_200px_200px_1_db9e13b8d9.gif"
+          src="https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732648286/Spin_1x_1_5s_200px_200px_1_04797cef0e.gif"
           alt="Loading..."
           className="w-20 h-20"
         />
@@ -147,7 +147,7 @@ function Gallery() {
     {filteredGalleries?.map((gallery, index) => {
       const image = gallery?.attributes?.image;
       const imageUrl = image
-        ? `${process.env.NEXT_PUBLIC_API_URL}${image?.data?.attributes?.formats?.small?.url || image?.url}`
+        ? `${image?.data?.attributes?.formats?.small?.url || image?.url}`
         : null;
 
       return (
@@ -192,7 +192,7 @@ function Gallery() {
       <div className="relative w-[85%] h-[85%] mx-auto">
         <div className="relative w-full h-full">
           <img
-            src={`${process.env.NEXT_PUBLIC_API_URL}${filteredGalleries?.[selectedImageIndex]?.attributes?.image?.data?.attributes?.formats?.large?.url ||
+            src={`${filteredGalleries?.[selectedImageIndex]?.attributes?.image?.data?.attributes?.formats?.large?.url ||
               filteredGalleries?.[selectedImageIndex]?.attributes?.image?.data?.attributes?.url}`}
             alt="Selected"
             className="rounded-lg object-cover w-full h-full"
