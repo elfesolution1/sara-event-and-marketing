@@ -41,6 +41,7 @@ function Portfolio() {
           `${process.env.NEXT_PUBLIC_API_URL}/api/portfolio-images?populate=*`
         );
         const data = await response.json();
+        console.log('port',data);
         setGalleries(data?.data);
         setFilteredGalleries(data?.data);
         setIsLoading(true);
