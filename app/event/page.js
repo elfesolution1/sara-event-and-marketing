@@ -371,7 +371,7 @@ export default function Home() {
         <SwiperSlide key={index}>
           <div className="relative w-full h-full">
             <img
-              src={`${baseImageUrl}${imageUrl}`}
+              src={`${imageUrl}`}
               alt={altText}
               className="w-full h-full object-cover"
             />
@@ -461,7 +461,7 @@ export default function Home() {
       className="w-full h-full"
     >
       <img
-        src={`${baseImageUrl}${aboutSection?.aboutImage?.url || '/default-image.jpg'}`}
+        src={`${aboutSection?.aboutImage?.url || '/default-image.jpg'}`}
         alt={aboutSection?.aboutImage?.alternativeText || 'Default alt text'}
         className="rounded-lg shadow-lg w-full h-[80%] object-cover"
         width={500}
@@ -493,7 +493,7 @@ export default function Home() {
         >
           <CardHeader className="p-0">
             <img
-              src={`${baseImageUrl}${item?.image?.url || '/default-image.jpg'}`}
+              src={`${item?.image?.url || '/default-image.jpg'}`}
               alt={item?.image?.alternativeText || 'Default image'}
               width={400}
               height={250}
