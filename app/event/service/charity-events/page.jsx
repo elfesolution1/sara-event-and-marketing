@@ -144,8 +144,8 @@ function CharityEvent() {
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center p-8">
-            <div>
-              <h1 className="text-2xl font-bold mb-4 leading-tight w-full text-center ">
+            <div className='flex items-center justify-center'>
+              <h1 className="text-2xl font-bold mb-4 text-white leading-tight w-full text-center ">
                  {contactData?.serviceTitle?.title}
                   <span className="text-[#1e995e] font-bold ">
                     {contactData?.serviceTitle?.secondTitle}
@@ -165,7 +165,7 @@ function CharityEvent() {
           <img
             src={`${contactData.serviceImage.url}`}
             alt={contactData.serviceImage.alternativeText || "Service Image"}
-            className="w-full h-[200px] object-contain"
+            className="w-full h-[200px] object-cover"
           />
         )}
       </div>
@@ -207,7 +207,7 @@ function CharityEvent() {
             className="w-[100%] mx-auto"
           >
             {galleryImages?.map((image, index) => {
-              const imageUrl = image?.url ? `${baseImageUrl}${image.url}` : null;
+              const imageUrl = image?.url ? `${image.url}` : null;
               return (
                 <SwiperSlide key={index}>
                   <div className="relative group cursor-pointer" onClick={() => openLightbox(image)}>
