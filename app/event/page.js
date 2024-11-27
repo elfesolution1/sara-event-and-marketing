@@ -591,7 +591,7 @@ export default function Home() {
         {filteredGalleries?.map((gallery, index) => {
           const image = gallery?.attributes?.image;
           const imageUrl = image
-            ? `${process.env.NEXT_PUBLIC_API_URL}${image?.data?.attributes?.formats?.small?.url || image?.url}`
+            ? `${image?.data?.attributes?.formats?.small?.url || image?.url}`
             : null;
 
           return (
