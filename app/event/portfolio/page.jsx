@@ -41,7 +41,6 @@ function Portfolio() {
           `${process.env.NEXT_PUBLIC_API_URL}/api/portfolio-images?populate=*`
         );
         const data = await response.json();
-        console.log('port',data);
         setGalleries(data?.data);
         setFilteredGalleries(data?.data);
         setIsLoading(true);
@@ -151,7 +150,6 @@ function Portfolio() {
       const imageUrl = image
         ? `${image.data.attributes.formats.small.url || image.url}`
         : null;
-      console.log('image url , ', imageUrl);
       return (
         <div
           key={gallery.id}
@@ -193,15 +191,21 @@ function Portfolio() {
       </button>
       <div className="relative w-[85%] h-[85%] mx-auto">
         <div className="relative w-full h-full">
-          {console.log('selected image, ', filteredGalleries)}
-          {filteredGalleries[selectedImageIndex]?.attributes.image?.data?.attributes?.formats?.large?.url || 
-            filteredGalleries[selectedImageIndex]?.attributes.image?.data?.attributes?.url
-          }
-          <img
-            src={`${imageUrl}`}
-            alt="Selected"
-            className="rounded-lg object-cover w-full h-full"
-          />
+          const selectedImageUrl = 
+            filteredGalleries[selectedImageIndex]?.attributes.image?.data?.attributes?.formats?.large?.url ||
+            filteredGalleries[selectedImageIndex]?.attributes.image?.data?.attributes?.url;
+          
+            {selectedImageUrl ? (
+              <img
+                src={selectedImageUrl}
+                alt="Selected"
+                className="rounded-lg object-cover w-full h-full"
+              />
+            ) : (
+              <p className="text-white">Image not available</p>
+            )}
+
+
         </div>
       </div>
     </div>
