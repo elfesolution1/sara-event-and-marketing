@@ -109,14 +109,13 @@ function Portfolio() {
       <section className="hero-section relative w-full h-[70vh]">
         <div className="absolute inset-0 w-full h-full">
           <img
-            src="https://sara-events-and-marketing-4fe9cca6bffd.herokuapp.com/uploads/10_96534da41a.webp"
+            src="https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732695348/background_2_673f9666d7.jpg"
             alt="Gallery"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center p-8">
+          <div className="absolute inset-0  bg-[#1C244B]  bg-opacity-50 flex items-center p-8">
             <div className="w-[60%] mx-auto">
               <h1 className="text-center text-white font-medium text-5xl">
-                Portfolio Gallery
               </h1>
             </div>
           </div>
