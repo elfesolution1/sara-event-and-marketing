@@ -74,10 +74,10 @@ const Header = () => {
 
   const isActive = (path) =>
     pathname === path
-      ? "text-[#1e995e] font-medium border-b-2 border-b-[#1e995e]"
+      ? "text-[#137a70] font-medium border-b-2 border-b-[#137a70]"
       : "";
   const isActiveButton = (path) =>
-    pathname === path ? "text-white font-medium  bg-[#1e995e]" : "";
+    pathname === path ? "text-white font-medium  bg-[#137a70]" : "";
 
   const toggleMenu = () => {
     setMenuOpen(!isMenuOpen);
@@ -125,7 +125,7 @@ const Header = () => {
           <Link
             key={index}
             href={item?.url || '#'}
-            className={`text-[16px] hover:scale-110 hover:text-[#1e995e] hover:font-medium hover:border-b-2 hover:border-b-[#1e995e] hover:transition-all hover:duration-300 py-1 ${isActive(`${item?.url}`)}`}
+            className={`text-[16px] hover:scale-110 hover:text-[#137a70] hover:font-medium hover:border-b-2 hover:border-b-[#137a70] hover:transition-all hover:duration-300 py-1 ${isActive(`${item?.url}`)}`}
           >
             {item?.title || "Menu Item"}
           </Link>
@@ -136,7 +136,7 @@ const Header = () => {
         <div className="hidden md:block">
           <Link
             href={headerData?.headerContact?.url || '#'}
-            className={`text-[16px] border border-[#1E995E] py-2 px-6 hover:bg-[#1e995e] hover:text-white rounded-3xl hover:transition-all duration-300 hover:shadow-lg ${isActiveButton("/contact")}`}
+            className={`text-[16px] border border-[#137a70] py-2 px-6 hover:bg-[#137a70] hover:text-white rounded-3xl hover:transition-all duration-300 hover:shadow-lg ${isActiveButton("/contact")}`}
           >
             {headerData?.headerContact?.title || "Contact"}
           </Link>

@@ -105,7 +105,7 @@ const Footer = () => {
   return (
     <footer className="text-white pb-10 relative">
   {/* CTA Section */}
-  <div className="bg-[#1E995E] w-[80%] mx-auto shadow-2xl rounded-2xl flex flex-col md:flex-row justify-between items-center px-6 py-8 md:py-12 -mb-16 relative z-10">
+  <div className="bg-[#137a70] w-[80%] mx-auto shadow-2xl rounded-2xl flex flex-col md:flex-row justify-between items-center px-6 py-8 md:py-12 -mb-16 relative z-10">
     <div className="space-y-4 w-full md:w-[65%]">
       <h1 className="text-3xl font-medium">{footerData?.ctaTitle}</h1>
       <p>{footerData?.ctaDescription}</p>
@@ -113,7 +113,7 @@ const Footer = () => {
     <div className="w-full md:w-auto mt-4 md:mt-0 text-center md:text-right">
       <Link
         href={`${footerData?.ctaButton?.url}`}
-        className="py-3 px-10 rounded-2xl text-2xl hover:shadow-lg hover:scale-110 hover:transition-all hover:duration-300 bg-white text-[#1e995e]"
+        className="py-3 px-10 rounded-2xl text-2xl hover:shadow-lg hover:scale-110 hover:transition-all hover:duration-300 bg-white text-[#137a70]"
       >
         {footerData?.ctaButton?.title}
       </Link>
@@ -158,12 +158,12 @@ const Footer = () => {
 
       <main className="w-full md:w-[60%] flex flex-col md:flex-row justify-around items-start gap-2">
         <div className="space-y-3">
-          <h2 className="text-xl text-[#1E995E]">Event Link</h2>
+          <h2 className="text-xl text-[#137a70]">Event Link</h2>
           <div className="flex flex-col items-start gap-2 dark:text-white">
             {footerData?.eventLink?.map((item, index) => (
               <Link
                 key={index}
-                className="hover:text-[#1E995E] hover:scale-105 hover:border-b hover:border-b-[#1E995E] pb-[2px]"
+                className="hover:text-[#137a70] hover:scale-105 hover:border-b hover:border-b-[#137a70] pb-[2px]"
                 href={`${item?.url}`}
               >
                 {item?.title}
@@ -173,12 +173,12 @@ const Footer = () => {
         </div>
 
         <div className="space-y-3">
-          <h2 className="text-xl text-[#1E995E]">Property Link</h2>
+          <h2 className="text-xl text-[#137a70]">Property Link</h2>
           <div className="flex flex-col items-start gap-2 dark:text-white">
             {footerData?.propertyLink?.map((item, index) => (
               <Link
                 key={index}
-                className="hover:text-[#1E995E] hover:scale-105 hover:border-b hover:border-b-[#1E995E] pb-[2px]"
+                className="hover:text-[#137a70] hover:scale-105 hover:border-b hover:border-b-[#137a70] pb-[2px]"
                 href={`${item?.url}`}
               >
                 {item?.title}
@@ -188,7 +188,7 @@ const Footer = () => {
         </div>
 
         <div className="space-y-2">
-          <h1 className="text-xl text-[#1E995E] mb-5">Contact Info</h1>
+          <h1 className="text-xl text-[#137a70] mb-5">Contact Info</h1>
           <div className="flex flex-col gap-4 items-start justify-around">
             {footerData?.contactInfo?.map((item, index) => {
               const imageUrl = item?.image?.data?.[0]?.url;
@@ -203,7 +203,7 @@ const Footer = () => {
                         alt={altText}
                         width={25}
                         height={25}
-                        className="hover:text-[#1E995E] hover:scale-125 transition-all duration-300 shadow-lg"
+                        className="hover:text-[#137a70] hover:scale-125 transition-all duration-300 shadow-lg"
                       />
                       <p className="dark:text-white">{item?.title}</p>
                     </div>
@@ -219,7 +219,7 @@ const Footer = () => {
     </div>
 
     <div>
-      <hr className="w-[80%] h-[2px] bg-[#1e995e] mx-auto" />
+      <hr className="w-[80%] h-[2px] bg-[#137a70] mx-auto" />
       <p className="text-center py-5 text-black dark:text-white">
         Developed by{" "}
         <Link
