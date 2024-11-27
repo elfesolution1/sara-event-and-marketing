@@ -74,7 +74,7 @@ function Page() {
             <Card className="w-[350px] mx-auto shadow-md rounded-lg overflow-hidden hover:shadow-[rgba(0,0,0,0.3)] dark:border dark:border-white dark:hover:shadow-[rgba(255,255,255,0.2)] transition-all duration-300">
               <CardHeader className="p-0">
                 <img
-                  src='https://sara-events-and-marketing-4fe9cca6bffd.herokuapp.com/uploads/3_W7_A8840_6040c33462.webp'
+                  src='https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650082/3_W7_A9002_copy_460cd86a5e.webp'
                   alt="image"
                   width={500}
                   height={210}
@@ -105,7 +105,7 @@ function Page() {
             <Card className="w-[350px] mx-auto shadow-md rounded-lg overflow-hidden hover:shadow-[rgba(0,0,0,0.3)] dark:border dark:border-white dark:hover:shadow-[rgba(255,255,255,0.2)] transition-all duration-300">
               <CardHeader className="p-0">
                 <img
-                  src="https://sara-events-and-marketing-4fe9cca6bffd.herokuapp.com/uploads/photo_5800701578242541043_y_1_19f7c459d5.jpg"
+                  src="https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732650749/photo_5800701578242541043_y_1_e6682c900f.jpg"
                   alt="image"
                   width={500}
                   height={210}
