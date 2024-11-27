@@ -170,31 +170,35 @@ function Portfolio() {
 
   {/* Lightbox */}
   {selectedImageIndex !== null && (
-    <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
-      <button
-        className="absolute top-6 right-6 hover:cursor-pointer bg-white text-black font-bold text-3xl px-3 rounded-full"
-        onClick={closeLightbox}
-      >
-        &times;
-      </button>
-      <button
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 z-50 bg-white text-black p-2 rounded-lg hover:cursor-pointer"
-        onClick={showPrevImage}
-      >
-        &#10094;
-      </button>
-      <button
-        onClick={showNextImage}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 z-50 bg-white text-black p-2 rounded-lg hover:cursor-pointer"
-      >
-        &#10095;
-      </button>
-      <div className="relative w-[85%] h-[85%] mx-auto">
-        <div className="relative w-full h-full">
-          const selectedImageUrl = 
-            filteredGalleries[selectedImageIndex]?.attributes.image?.data?.attributes?.formats?.large?.url ||
-            filteredGalleries[selectedImageIndex]?.attributes.image?.data?.attributes?.url;
-          
+  <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
+    <button
+      className="absolute top-6 right-6 hover:cursor-pointer bg-white text-black font-bold text-3xl px-3 rounded-full"
+      onClick={closeLightbox}
+    >
+      &times;
+    </button>
+    <button
+      className="absolute left-4 top-1/2 transform -translate-y-1/2 z-50 bg-white text-black p-2 rounded-lg hover:cursor-pointer"
+      onClick={showPrevImage}
+    >
+      &#10094;
+    </button>
+    <button
+      onClick={showNextImage}
+      className="absolute right-4 top-1/2 transform -translate-y-1/2 z-50 bg-white text-black p-2 rounded-lg hover:cursor-pointer"
+    >
+      &#10095;
+    </button>
+
+    {/* Calculate selectedImageUrl before rendering */}
+    {(() => {
+      const selectedImageUrl =
+        filteredGalleries[selectedImageIndex]?.attributes?.image?.data?.attributes?.formats?.large?.url ||
+        filteredGalleries[selectedImageIndex]?.attributes?.image?.data?.attributes?.url;
+
+      return (
+        <div className="relative w-[85%] h-[85%] mx-auto">
+          <div className="relative w-full h-full">
             {selectedImageUrl ? (
               <img
                 src={selectedImageUrl}
@@ -204,12 +208,13 @@ function Portfolio() {
             ) : (
               <p className="text-white">Image not available</p>
             )}
-
-
+          </div>
         </div>
-      </div>
-    </div>
-  )}
+      );
+    })()}
+  </div>
+)}
+
 </div>
 
       <Footer />
