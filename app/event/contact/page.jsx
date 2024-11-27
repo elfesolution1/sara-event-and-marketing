@@ -156,7 +156,7 @@ function Contact() {
     return (
       <div className="flex justify-center items-center h-screen">
         <img
-          src="https://sara-events-and-marketing-4fe9cca6bffd.herokuapp.com/uploads/Spin_1x_1_0s_200px_200px_1_1_e2c92a91fb.gif"
+          src="https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732648285/Spin_1x_1_0s_200px_200px_1_1_97ae55d443.gif"
           alt="Loading..."
           className="w-20 h-20"
         />
