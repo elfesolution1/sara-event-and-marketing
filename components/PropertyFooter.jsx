@@ -126,7 +126,7 @@ const PropertyFooter = () => {
         <div className="w-full md:w-[30%] space-y-5">
           <Link href="/">
             <img
-              src={`${baseImageUrl}${footerData?.footerLogo?.url}`}
+              src={`${footerData?.footerLogo?.url}`}
               alt={footerData?.footerLogo?.alternativeText || "Footer Logo"}
               width={210}
               height={10}
@@ -142,7 +142,7 @@ const PropertyFooter = () => {
                 <Link href={`${item?.url}`} key={index}>
                   {imageUrl ? (
                     <img
-                      src={`${baseImageUrl}${imageUrl}`}
+                      src={`${imageUrl}`}
                       alt={altText}
                       width={30}
                       height={30}
@@ -204,7 +204,7 @@ const PropertyFooter = () => {
                     {imageUrl ? (
                       <div className="flex items-center justify-around gap-3">
                         <img
-                          src={`${baseImageUrl}${imageUrl}`}
+                          src={`${imageUrl}`}
                           alt={altText}
                           width={25}
                           height={25}
