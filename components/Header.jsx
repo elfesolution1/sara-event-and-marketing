@@ -101,7 +101,7 @@ const Header = () => {
     >
       <Link href="/">
         <img
-          src={`${baseImageUrl}${headerData?.headerLogo?.url}`}
+          src={`${headerData?.headerLogo?.url}`}
           alt={headerData?.headerLogo?.alternativeText || "Company Logo"}
           width={135.12}
           height={20}
