@@ -617,6 +617,18 @@ export default function Home() {
     <button onClick={closeLightbox} className="absolute top-4 right-4 text-white text-xl">
       &times;
     </button>
+       <button
+      className="absolute left-4 top-1/2 transform -translate-y-1/2 z-50 bg-white text-black p-2 rounded-lg hover:cursor-pointer"
+      onClick={showPrevImage}
+    >
+      &#10094;
+    </button>
+    <button
+      onClick={showNextImage}
+      className="absolute right-4 top-1/2 transform -translate-y-1/2 z-50 bg-white text-black p-2 rounded-lg hover:cursor-pointer"
+    >
+      &#10095;
+    </button>
     <img
       src={filteredGalleries[selectedImageIndex]?.attributes?.image?.data?.attributes?.url}
       alt={filteredGalleries[selectedImageIndex]?.attributes?.Title || "Image"}
