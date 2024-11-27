@@ -301,7 +301,7 @@ export default function Home() {
     return (
       <div className="flex justify-center items-center h-screen">
         <img
-          src="https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732648286/Animation_1728832523355_1_b67bdd1013.gif"
+          src="https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732648285/Spin_1x_1_0s_200px_200px_1_1_97ae55d443.gif"
           alt="Loading..."
           className="w-20 h-20"
         />
