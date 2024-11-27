@@ -158,7 +158,7 @@ const Header = () => {
 
     {isMenuOpen && (
       <motion.div
-        className="absolute top-24 left-0 w-full bg-white dark:bg-gray-900 shadow-lg z-50 md:hidden"
+        className="absolute top-20 left-0 w-full bg-white dark:bg-gray-900 shadow-lg z-50 md:hidden"
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5 }}
