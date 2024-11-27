@@ -99,7 +99,7 @@ const Header = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <Link href="/">
+      <Link href="/event">
         <img
           src={`${headerData?.headerLogo?.url}`}
           alt={headerData?.headerLogo?.alternativeText || "Company Logo"}

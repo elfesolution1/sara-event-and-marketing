@@ -196,7 +196,7 @@ function Contact() {
             fill
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center p-8">
+          <div className="absolute inset-0 bg-[#1C244B] bg-opacity-50 flex items-center p-8">
             <div className="text-white text-left max-w-lg ml-12">
               {/* <h1 className="text-2xl font-bold mb-4 leading-tight shadow-lg">
                 Contact Us
