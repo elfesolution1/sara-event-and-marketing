@@ -139,26 +139,23 @@ function CharityEvent() {
       <section className="hero-section relative w-full h-[50vh]">
         <div className="relative w-full h-full">
           <img
-            src={`${baseImageUrl}${heroData?.image?.data[0]?.url}`}
-            alt={heroData?.image?.data[0]?.alternativeText}
-            fill
+            src="https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732695348/background_2_673f9666d7.jpg"
+            alt="background"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center p-8">
             <div className="text-white text-left max-w-lg ml-12">
-              <h1 className="text-2xl font-bold mb-4 leading-tight shadow-lg">
-                Charity Events
+              <h1 className="text-2xl font-bold mb-4 leading-tight shadow-lg text-center ">
+                 {contactData?.serviceTitle?.title}
+                  <span className="text-[#1e995e] font-bold ">
+                    {contactData?.serviceTitle?.secondTitle}
+                  </span>
               </h1>
             </div>
           </div>
         </div>
       </section>
-      <h1 className="text-center font-medium text-4xl my-4">
-        {contactData?.serviceTitle?.title}
-        <span className="text-[#1e995e] font-bold ">
-          {contactData?.serviceTitle?.secondTitle}
-        </span>
-      </h1>
+     
       <section className="mt-10 mb-20">
   <div className="w-[96%] lg:w-[70%] pb-10 mx-auto shadow-lg dark:border border-[rgba(255,255,255,0.6)]">
     <div>
@@ -166,11 +163,9 @@ function CharityEvent() {
         {/* Safely accessing image properties */}
         {contactData?.serviceImage?.url && (
           <img
-            src={`${baseImageUrl}${contactData.serviceImage.url}`}
+            src={`${contactData.serviceImage.url}`}
             alt={contactData.serviceImage.alternativeText || "Service Image"}
-            width={600}
-            height={100}
-            className="w-full"
+            className="w-[600px] h-[200px]"
           />
         )}
       </div>
