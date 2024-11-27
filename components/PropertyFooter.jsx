@@ -114,7 +114,7 @@ const PropertyFooter = () => {
       <div className="w-full md:w-auto mt-4 md:mt-0 text-center md:text-right">
         <Link
           href={`${footerData?.ctaButton?.url}`}
-          className="py-3 px-10 rounded-2xl text-2xl hover:shadow-lg hover:scale-110 hover:transition-all hover:duration-300 bg-white text-[#1e995e]"
+          className="py-3 px-10 rounded-2xl text-2xl hover:shadow-lg hover:scale-110 hover:transition-all hover:duration-300 bg-white text-[#137a70]"
         >
           {footerData?.ctaButton?.title}
         </Link>
@@ -159,13 +159,13 @@ const PropertyFooter = () => {
   
         <main className="w-full md:w-[60%] flex flex-col md:flex-row justify-around items-start gap-2">
           <div className="space-y-3">
-            <h2 className="text-xl text-[#1E995E] font-medium">Event Link</h2>
+            <h2 className="text-xl text-[#137a70] font-medium">Event Link</h2>
             <div className="flex flex-col items-start gap-2 dark:text-white">
               {footerData?.eventLink?.map((item, index) => {
                 return (
                   <Link
                     key={index}
-                    className="hover:text-[#1E995E] hover:scale-105 hover:border-b hover:border-b-[#1E995E] pb-[2px] hover:font-medium"
+                    className="hover:text-[#137a70] hover:scale-105 hover:border-b hover:border-b-[#137a70] pb-[2px] hover:font-medium"
                     href={`${item?.url}`}
                   >
                     {item?.title}
