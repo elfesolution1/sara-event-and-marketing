@@ -233,7 +233,7 @@ const FindProperty = () => {
     return (
       <div className="flex justify-center items-center h-screen">
         <img
-          src="https://sara-events-and-marketing-4fe9cca6bffd.herokuapp.com/uploads/Spin_1x_1_5s_200px_200px_1_db9e13b8d9.gif"
+          src="https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732648286/Spin_1x_1_5s_200px_200px_1_04797cef0e.gif"
           alt="Loading..."
           className="w-20 h-20"
         />
@@ -384,14 +384,14 @@ const FindProperty = () => {
           <div className="relative">
             <div className="absolute top-2 left-2 z-10 bg-white p-1 rounded-full shadow-lg">
               <img
-                src={`${baseImageUrl}${property?.icon?.url}`}
+                src={`${property?.icon?.url}`}
                 alt={property?.icon?.alternativeText}
                 className="w-6 h-6 object-cover"
               />
             </div>
 
             <img
-              src={`${baseImageUrl}${property?.image?.url}`}
+              src={`${property?.image?.url}`}
               alt={property?.image?.alternativeText}
               className="w-full h-64 object-cover rounded-t-lg"
             />
