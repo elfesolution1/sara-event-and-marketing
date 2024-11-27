@@ -440,7 +440,7 @@ export default function Home() {
     })}
   </Swiper>
 </div>
-<section className="pb-16 pt-10 bg-[url('/bg2.jpg')]">
+<section className="pb-16 pt-10 bg-[url('/bg2.jpg')] dark:bg-none">
   <div className="max-w-7xl mx-auto px-6 sm:px-8">
     <motion.h1
       initial="hidden"
@@ -481,7 +481,7 @@ export default function Home() {
       )}
     </div>
   </div>
-</section>;
+</section>
 
       {/* Main Section */}
       <main className="mt-0">
