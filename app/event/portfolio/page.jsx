@@ -148,7 +148,7 @@ function Portfolio() {
     {filteredGalleries.map((gallery, index) => {
       const { image, Title } = gallery.attributes;
       const imageUrl = image
-        ? `${process.env.NEXT_PUBLIC_API_URL}${image.data.attributes.formats.small.url || image.url}`
+        ? `${image.data.attributes.formats.small.url || image.url}`
         : null;
 
       return (
@@ -196,7 +196,7 @@ function Portfolio() {
             filteredGalleries[selectedImageIndex]?.attributes.image?.data?.attributes?.url
           }
           <img
-            src={`${process.env.NEXT_PUBLIC_API_URL}${imageUrl}`}
+            src={`${imageUrl}`}
             alt="Selected"
             className="rounded-lg object-cover w-full h-full"
           />
