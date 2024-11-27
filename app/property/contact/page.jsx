@@ -142,7 +142,7 @@ function ContactPage() {
     return (
       <div className="flex justify-center items-center h-screen">
         <img
-          src="https://sara-events-and-marketing-4fe9cca6bffd.herokuapp.com/uploads/Spin_1x_1_5s_200px_200px_1_db9e13b8d9.gif"
+          src="https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732648286/Spin_1x_1_5s_200px_200px_1_04797cef0e.gif"
           alt="Loading..."
           className="w-20 h-20"
         />
@@ -246,7 +246,7 @@ function ContactPage() {
                 return (
                   <div className="flex items-start space-x-4" key={index}>
                     <img
-                      src={`${baseImageUrl}${imageUrl}`}
+                      src={`${imageUrl}`}
                       alt={altText}
                       width={25}
                       height={25}
