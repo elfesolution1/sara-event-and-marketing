@@ -102,12 +102,12 @@ function Service() {
       <section className="hero-section relative w-full h-[50vh]">
         <div className="relative w-full h-full">
           <img
-            src={`${process.env.NEXT_PUBLIC_API_URL}/uploads/2_Y1_A8821_3bda0ac779.webp`}
+            src="https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732695348/background_2_673f9666d7.jpg"
             alt="alt"
             fill
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center p-8">
+          <div className="absolute inset-0  bg-[#1C244B]  bg-opacity-50 flex items-center p-8">
             <div className="text-white text-left max-w-lg ml-12">
               {/* <h1 className="text-2xl font-bold mb-4 leading-tight shadow-lg">
                 Service
