@@ -106,17 +106,18 @@ function Portfolio() {
       </head>
 
       <Header />
-      <section className="hero-section relative w-full h-[70vh]">
-        <div className="absolute inset-0 w-full h-full">
+      <section className="hero-section relative w-full h-[50vh]">
+        <div className="relative w-full h-full">
           <img
             src="https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732695348/background_2_673f9666d7.jpg"
-            alt="Gallery"
+            alt="portfolio"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0  bg-[#1C244B]  bg-opacity-50 flex items-center p-8">
-            <div className="w-[60%] mx-auto">
-              <h1 className="text-center text-white font-medium text-5xl">
-              </h1>
+          <div className="absolute inset-0 bg-[#1C244B] bg-opacity-50  flex items-center p-8">
+            <div className="text-white text-left max-w-lg ml-12">
+              {/* <h1 className="text-2xl font-bold mb-4 leading-tight shadow-lg">
+                About Us
+              </h1> */}
             </div>
           </div>
         </div>
