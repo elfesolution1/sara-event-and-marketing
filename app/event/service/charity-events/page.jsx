@@ -145,7 +145,7 @@ function CharityEvent() {
           />
           <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center p-8">
             <div className="text-white text-left max-w-lg ml-12">
-              <h1 className="text-2xl font-bold mb-4 leading-tight shadow-lg text-center ">
+              <h1 className="text-2xl font-bold mb-4 leading-tight w-full text-center ">
                  {contactData?.serviceTitle?.title}
                   <span className="text-[#1e995e] font-bold ">
                     {contactData?.serviceTitle?.secondTitle}
@@ -165,7 +165,7 @@ function CharityEvent() {
           <img
             src={`${contactData.serviceImage.url}`}
             alt={contactData.serviceImage.alternativeText || "Service Image"}
-            className="w-[600px] h-[200px]"
+            className="w-full h-[200px]"
           />
         )}
       </div>
