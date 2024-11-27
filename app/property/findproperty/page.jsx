@@ -274,7 +274,7 @@ const FindProperty = () => {
       <PropertyHeader />
       <section className="hero-section relative w-full h-[70vh]">
         <img
-          src={`${process.env.NEXT_PUBLIC_API_URL}/uploads/10_5fc42d273d.webp`}
+          src="https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732695347/background_ac0513044d.jpg"
           alt="alt"
           fill
           className="w-full h-full object-cover"
@@ -282,7 +282,7 @@ const FindProperty = () => {
 
         <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center p-8">
           <div className="w-[60%] mx-auto">
-            <h1 className="text-center text-white font-medium text-5xl">
+            <h1 className="text-center text-white font-medium text-4xl">
               Find Property
             </h1>
           </div>

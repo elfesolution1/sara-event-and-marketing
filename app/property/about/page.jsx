@@ -231,14 +231,14 @@ function PropertyAbout() {
         <section className="hero-section relative w-full h-[70vh]">
           <div className="absolute inset-0 w-full h-full">
             <img
-              src={`${process.env.NEXT_PUBLIC_API_URL}/uploads/10_5fc42d273d.webp`}
+              src="https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732695347/background_ac0513044d.jpg"
               alt="alt"
               fill
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center p-8">
               <div className="w-[60%] mx-auto">
-                <h1 className="text-center text-white font-medium text-5xl">
+                <h1 className="text-center text-white font-medium text-4xl">
                   About Us
                 </h1>
               </div>
@@ -247,7 +247,7 @@ function PropertyAbout() {
         </section>
 
         {/* Who We Are Section */}
-        <section className="py-20 bg-white dark:bg-[#1f2937]">
+        <section className="pb-20 pt-10 bg-white dark:bg-[#1f2937]">
   <div className="container mx-auto px-6 md:px-12 lg:px-16">
     <motion.div
       initial="hidden"
@@ -423,15 +423,13 @@ function PropertyAbout() {
                   viewport={{ once: true }}
                   variants={cardVariants[idx % 3]}
                   key={idx}
-                  className=" shadow-lg transition-all p-6 dark:bg-[#111827]"
+                  className=" shadow-lg bg-white rounded-lg transition-all px-6 py-3 dark:bg-[#111827]"
                 >
                   <div className="relative w-full h-48 mb-4 rounded-lg overflow-hidden">
                     {/* Team Member Image */}
                     <img
                       src={`${member?.image?.data?.attributes?.url}`}
                       alt={`${member?.image?.data?.attributes?.alternativeText} image`}
-                      // layout="fill"
-                      fill
                       objectFit="cover"
                       className="rounded-lg"
                     />
