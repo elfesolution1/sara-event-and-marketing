@@ -401,7 +401,7 @@ export default function Home() {
                   viewport={{ once: true }}
                   variants={buttonSlide}
                   href={url}
-                  className="bg-[#1e995e] text-white hover:bg-white hover:text-[#1e995e] hover:border hover:border-[#1e995e] py-3 px-6 rounded hover:shadow-2xl hover:scale-110 transition-all duration-300 shadow-md"
+                  className="bg-[#137a70] text-white hover:bg-white hover:text-[#137a70] hover:border hover:border-[#137a70] py-3 px-6 rounded hover:shadow-2xl hover:scale-110 transition-all duration-300 shadow-md"
                 >
                   {button}
                 </motion.a>
@@ -428,7 +428,7 @@ export default function Home() {
         variants={titleSlide}
         className="text-4xl font-bold text-gray-800 leading-tight dark:text-white"
       >
-        About <span className="font-bold text-[#1e995e]">Us</span>
+        About <span className="font-bold text-[#137a70]">Us</span>
       </motion.h1>
       <motion.p
         initial="hidden"
@@ -447,7 +447,7 @@ export default function Home() {
         whileInView="visible"
         viewport={{ once: true }}
         variants={buttonSlide}
-        className="bg-[#1e995e] mt-5 hover:bg-white hover:text-[#1e995e] hover:border hover:border-[#1e995e] text-white py-3 px-6 rounded hover:shadow-2xl hover:scale-110 transition-all duration-300 shadow-md"
+        className="bg-[#137a70] mt-5 hover:bg-white hover:text-[#137a70] hover:border hover:border-[#137a70] text-white py-3 px-6 rounded hover:shadow-2xl hover:scale-110 transition-all duration-300 shadow-md"
       >
         {aboutSection?.aboutButton?.title || "Learn More"}
       </motion.a>
@@ -474,7 +474,7 @@ export default function Home() {
   <section className="pb-12 pt-4">
     <div className="text-center mb-12">
       <h1 className="text-4xl font-bold text-gray-800 mb-4 dark:text-white">
-        Our <span className="text-[#1e995e] font-bold">Service</span>
+        Our <span className="text-[#137a70] font-bold">Service</span>
       </h1>
       <p className="text-lg text-gray-600 max-w-2xl mx-auto dark:text-white">
         {serviceSection?.description || "Default service description"}
@@ -509,7 +509,7 @@ export default function Home() {
             </CardDescription>
             <a
               href={item?.href || "#"}
-              className="bg-[#1e995e] text-white dark:hover:bg-white dark:hover:text-[#1e995e] dark:hover:border dark:hover:border-[#1e995e] py-2 px-4 rounded hover:scale-110 hover:shadow-lg transition-all duration-300"
+              className="bg-[#137a70] text-white dark:hover:bg-white dark:hover:text-[#137a70] dark:hover:border dark:hover:border-[#137a70] py-2 px-4 rounded hover:scale-110 hover:shadow-lg transition-all duration-300"
             >
               {item?.button || "Default Button"}
             </a>
@@ -523,7 +523,7 @@ export default function Home() {
   <section className="pb-12 pt-4">
     <div className="text-center mb-12">
       <h1 className="text-4xl font-bold text-gray-800 mb-4 dark:text-white">
-        Our <span className="text-[#1e995e] font-bold">Achievement</span>
+        Our <span className="text-[#137a70] font-bold">Achievement</span>
       </h1>
       <p className="text-lg text-gray-600 max-w-2xl mx-auto dark:text-white">
         {acheivementSection?.description || "Default achievement description"}
@@ -560,14 +560,13 @@ export default function Home() {
   <section className="py-12 text-center mb-10 bg-[url('/bg2.jpg')] dark:bg-none bg-cover bg-center min-h-screen w-full">
     <div className="text-center">
       <h1 className="text-4xl font-bold text-gray-800 mb-4 dark:text-white">
-        Our <span className="text-[#1e995e] font-bold">Portfolio</span>
+        Our <span className="text-[#137a70] font-bold">Portfolio</span>
       </h1>
       <p className="text-lg text-gray-600 max-w-2xl mx-auto dark:text-white dark:font-normal">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
       </p>
     </div>
     <div className="dark:bg-none min-h-screen flex flex-col items-center py-10">
-      <h1 className="text-5xl font-medium mb-8">Property Gallery</h1>
 
       {/* Responsive tabs */}
       <div className="flex justify-center gap-2 mb-8 flex-wrap">
@@ -577,7 +576,7 @@ export default function Home() {
             onClick={() => setActiveTab(tab)}
             className={`py-2 px-4 rounded-xl text-sm sm:text-base md:text-[16px] font-medium transition-all ${
               activeTab === tab
-                ? "bg-[#1e995e] text-white shadow-lg"
+                ? "bg-[#137a70] text-white shadow-lg"
                 : "bg-gray-200 text-gray-700"
             }`}
           >

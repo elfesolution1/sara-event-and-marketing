@@ -291,7 +291,7 @@ function About() {
             className="text-4xl font-bold text-gray-800 leading-tight dark:text-white"
           >
             {aboutSection.aboutTitle.title}{" "}
-            <span className="text-[#1e995e] font-bold">
+            <span className="text-[#137a70] font-bold">
               {" "}
               {aboutSection?.aboutTitle?.secondTitle}
             </span>
@@ -332,7 +332,7 @@ function About() {
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 dark:text-white ">
               {missionSection?.missionTitle?.title}{" "}
-              <span className="text-[#1e995e] font-bold">
+              <span className="text-[#137a70] font-bold">
                 {" "}
                 {missionSection?.missionTitle?.secondTitle}
               </span>
@@ -359,7 +359,7 @@ function About() {
                   </div>
                   <h3 className="text-2xl font-semibold text-gray-800 mb-2  dark:text-white ">
                     {item?.title}{" "}
-                    <span className="text-[#1e995e] font-bold]">
+                    <span className="text-[#137a70] font-bold]">
                       {item?.button}
                     </span>
                   </h3>
@@ -391,7 +391,7 @@ function About() {
           <div>
             <h2 className="text-4xl font-extrabold text-gray-900 dark:text-white  text-center lg:text-center">
               {whyUsSection?.whyUsTitle?.title}{" "}
-              <span className="text-[#1e995e] font-bold]">
+              <span className="text-[#137a70] font-bold]">
                 {" "}
                 {whyUsSection?.whyUsTitle?.secondTitle}
               </span>
@@ -413,7 +413,7 @@ function About() {
                     <div>
                       <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
                         {item?.title}{" "}
-                        <span className="text-[#1e995e] font-bold]">
+                        <span className="text-[#137a70] font-bold]">
                           {item?.button}
                         </span>
                       </h3>
@@ -430,11 +430,11 @@ function About() {
       </section>
 
       {/* Gallery Section */}
-      <section className="py-16 dark:bg-gray-900">
+      <section className="py-16 dark:bg-gray-900 bg-[url('https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732695348/background_2_673f9666d7.jpg ')]  bg-cover bg-center ">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
         <h2 className="text-4xl font-extrabold text-gray-900 dark:text-white mb-12">
           {gallerySection?.galleryTitle?.title ?? 'Default Title'}{" "}
-          <span className="text-[#1e995e] font-bold">
+          <span className="text-[#137a70] font-bold">
             {gallerySection?.galleryTitle?.secondTitle ?? 'Default Second Title'}
           </span>
         </h2>
@@ -523,7 +523,7 @@ function About() {
   <div className="text-center mb-12">
     <h1 className="text-4xl font-bold text-gray-800 mb-4 dark:text-white">
       {partnerSection?.partnerTitle?.title || ""}{" "}
-      <span className="text-[#1e995e] font-bold ">
+      <span className="text-[#137a70] font-bold ">
         {partnerSection?.partnerTitle?.secondTitle || ""}
       </span>
     </h1>
@@ -581,7 +581,7 @@ function About() {
   <div className="max-w-7xl mx-auto px-6 lg:px-8">
     <h2 className="text-4xl font-extrabold text-gray-900 dark:text-white mb-12 text-center">
       {faqSection?.FAQTitle?.title}{" "}
-      <span className="text-[#1e995e] font-bold">
+      <span className="text-[#137a70] font-bold">
         {faqSection?.FAQTitle?.secondTitle}
       </span>
     </h2>

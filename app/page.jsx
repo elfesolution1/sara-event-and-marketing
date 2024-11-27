@@ -95,7 +95,7 @@ function Page() {
                 <a
                   target="_blank"
                   href="/event"
-                  className="block bg-[#1e995e] text-white text-center py-2 px-4 rounded hover:scale-105 hover:shadow-lg dark:hover:bg-white dark:hover:text-[#1e995e] dark:hover:border dark:hover:border-[#1e995e] transition-transform duration-300"
+                  className="block bg-[#137a70] text-white text-center py-2 px-4 rounded hover:scale-105 hover:shadow-lg dark:hover:bg-white dark:hover:text-[#1e995e] dark:hover:border dark:hover:border-[#1e995e] transition-transform duration-300"
                 >
                   Event
                 </a>

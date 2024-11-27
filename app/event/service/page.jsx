@@ -121,7 +121,7 @@ function Service() {
   <div className="text-center mb-12">
     <h1 className="text-4xl font-bold text-gray-800 mb-4 dark:text-white">
       {/* {serviceSection.title} */}
-      Our <span className="text-[#1e995e] font-bold">Service</span>
+      Our <span className="text-[#137a70] font-bold">Service</span>
     </h1>
     <p className="text-lg text-gray-600 max-w-2xl mx-auto dark:text-white">
       Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -166,7 +166,7 @@ function Service() {
               <Link
                 href={href}
                 target="_blank"
-                className="bg-[#1e995e] hover:bg-white hover:text-[#1e995e] hover:border hover:border-[#1e995e] text-white py-2 px-4 rounded hover:scale-110 hover:shadow-lg transition-all duration-300"
+                className="bg-[#137a70] hover:bg-white hover:text-[#137a70] hover:border hover:border-[#137a70] text-white py-2 px-4 rounded hover:scale-110 hover:shadow-lg transition-all duration-300"
               >
                 {button}
               </Link>

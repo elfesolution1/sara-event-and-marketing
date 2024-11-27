@@ -208,7 +208,7 @@ function Contact() {
 
       <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-26 mt-10 text-center">
         {contactData?.contactTitle?.title}{" "}
-        <span className="text-[#1e995e]">
+        <span className="text-[#137a70]">
           {contactData?.contactTitle?.secondTitle}
         </span>
       </h2>
@@ -319,7 +319,7 @@ function Contact() {
         </div>
         <button
           type="submit"
-          className="w-full p-3 bg-white text-[#1e995e] font-bold rounded-lg hover:scale-110 hover:shadow-lg transition-all duration-300"
+          className="w-full p-3 bg-white text-[#137a70] font-bold rounded-lg hover:scale-110 hover:shadow-lg transition-all duration-300"
         >
           Send Message
         </button>
