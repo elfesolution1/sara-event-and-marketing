@@ -357,7 +357,7 @@ function PropertyAbout() {
                 >
                   {partner?.image?.data?.[0]?.attributes?.url ? (
                     <img
-                      src={`${baseImageUrl}${partner?.image?.data[0]?.attributes?.url}`}
+                      src={`${partner?.image?.data[0]?.attributes?.url}`}
                       alt={partner?.image?.data[0]?.attributes?.alternativeText}
                       className="mx-auto h-20 object-contain dark:border dark:border-white"
                     />
@@ -428,7 +428,7 @@ function PropertyAbout() {
                   <div className="relative w-full h-48 mb-4 rounded-lg overflow-hidden">
                     {/* Team Member Image */}
                     <img
-                      src={`${baseImageUrl}${member?.image?.data?.attributes?.url}`}
+                      src={`${member?.image?.data?.attributes?.url}`}
                       alt={`${member?.image?.data?.attributes?.alternativeText} image`}
                       // layout="fill"
                       fill
