@@ -103,9 +103,8 @@ const PropertyFooter = () => {
     return <div>Data not available</div>; // Handle case where no data is available
   }
   return (
-    <footer className="text-white pb-10 relative">
+    <footer className="text-white relative">
     {/* CTA Section */}
-    <div className="h-10"></div>
     <div className="bg-[#969963] w-[80%] mx-auto shadow-2xl rounded-2xl flex flex-col md:flex-row justify-between items-center px-6 py-8 md:py-12 -mb-16 relative z-10">
       <div className="space-y-4 w-full md:w-[65%]">
         <h1 className="text-3xl font-medium">{footerData?.ctaTitle}</h1>
@@ -114,7 +113,7 @@ const PropertyFooter = () => {
       <div className="w-full md:w-auto mt-4 md:mt-0 text-center md:text-right">
         <Link
           href={`${footerData?.ctaButton?.url}`}
-          className="py-3 px-10 rounded-2xl text-2xl hover:shadow-lg hover:scale-110 hover:transition-all hover:duration-300 bg-white text-[#137a70]"
+          className="py-3 px-10 rounded-2xl text-2xl hover:shadow-lg hover:scale-110 hover:transition-all hover:duration-300 bg-white text-black"
         >
           {footerData?.ctaButton?.title}
         </Link>

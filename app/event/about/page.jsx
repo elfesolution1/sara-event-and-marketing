@@ -577,9 +577,9 @@ function About() {
 </section>
 
       {/* FAQ Section */}
-      <section className="py-16 bg-[url('/bg2.jpg')] dark:bg-none bg-cover bg-center min-h-screen w-full">
+      <section className=" bg-[url('/bg2.jpg')] dark:bg-none bg-cover bg-center py-5 w-full">
   <div className="max-w-7xl mx-auto px-6 lg:px-8">
-    <h2 className="text-4xl font-extrabold text-gray-900 dark:text-white mb-12 text-center">
+    <h2 className="text-4xl font-extrabold text-gray-900 dark:text-white mb-8 text-center">
       {faqSection?.FAQTitle?.title}{" "}
       <span className="text-[#137a70] font-bold">
         {faqSection?.FAQTitle?.secondTitle}
@@ -588,7 +588,7 @@ function About() {
     <Accordion
       type="single"
       collapsible
-      className="w-[90%] lg:w-[50%] mx-auto"
+      className="w-[90%] lg:w-[65%] mx-auto"
     >
       {faqSection?.QA?.map((item, index) => {
         return (

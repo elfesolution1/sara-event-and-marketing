@@ -103,7 +103,7 @@ const Footer = () => {
     return <div>Data not available</div>; // Handle case where no data is available
   }
   return (
-    <footer className="text-white pb-10 relative">
+    <footer className="text-white  relative">
   {/* CTA Section */}
   <div className="bg-[#137a70] w-[80%] mx-auto shadow-2xl rounded-2xl flex flex-col md:flex-row justify-between items-center px-6 py-8 md:py-12 -mb-16 relative z-10">
     <div className="space-y-4 w-full md:w-[65%]">
@@ -220,7 +220,7 @@ const Footer = () => {
 
     <div>
       <hr className="w-[80%] h-[2px] bg-[#137a70] mx-auto" />
-      <p className="text-center py-5 text-black dark:text-white">
+      <p className="text-center py-3 text-black dark:text-white">
         Developed by{" "}
         <Link
           target="_blank"

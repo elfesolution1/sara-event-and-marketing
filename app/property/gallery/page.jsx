@@ -124,11 +124,11 @@ function Gallery() {
         </div>
       </section>
 
-      <div className="bg-gray-50 dark:bg-[#1e212a] min-h-screen flex flex-col items-center py-10">
+      <div className="bg-gray-50 dark:bg-[#1e212a] py-10 flex flex-col items-center ">
   <h1 className="text-3xl font-medium mb-8">Property Gallery</h1>
 
   {/* Responsive tabs */}
-  <div className="flex justify-center gap-2 mb-8 flex-wrap">
+  <div className="flex justify-center gap-2  flex-wrap">
     {categories?.map((tab) => (
       <button
         key={tab}

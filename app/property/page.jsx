@@ -420,7 +420,8 @@ const PropertyHome = React.memo(function PropertyHome() {
       visible: { opacity: 1, x: 0, transition: { duration: 0.8, delay: 0.8 } },
     },
   ];
-
+  const googleMapsEmbedUrl =
+  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3154.257490345634!2d-122.41941648468084!3d37.77492967975915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858064f0f4a583%3A0xf43c9f33c5eb49!2sGoogle!5e0!3m2!1sen!2sus!4v1636557587604!5m2!1sen!2sus";
   return (
     <>
       <head>
@@ -790,6 +791,24 @@ const PropertyHome = React.memo(function PropertyHome() {
           </form>
         </div>
       </section>
+      {/* Google Maps */}
+  <section>
+    <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6 text-center">
+      Our Location
+    </h2>
+    <div className="relative h-96 w-[80%] mx-auto mb-12">
+      <iframe
+        src={googleMapsEmbedUrl}
+        width="100%"
+        height="100%"
+        style={{ border: 0 }}
+        allowFullScreen=""
+        loading="lazy"
+        className="rounded-lg shadow-lg"
+        referrerPolicy="no-referrer-when-downgrade"
+      />
+    </div>
+  </section>
       <PropertyFooter />
     </>
   );

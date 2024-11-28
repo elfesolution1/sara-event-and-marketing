@@ -625,7 +625,7 @@ export default function Home() {
   </section>
 
   {/* Portfolio Section */}
-  <section className="py-12 text-center mb-10 bg-[url('/bg2.jpg')] dark:bg-none bg-cover bg-center min-h-screen w-full">
+  <section className="py-12 text-center  dark:bg-none bg-cover bg-center min-h-screen w-full">
     <div className="text-center">
       <h1 className="text-4xl font-bold text-gray-800 mb-4 dark:text-white">
         Our <span className="text-[#137a70] font-bold">Portfolio</span>

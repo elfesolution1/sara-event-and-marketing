@@ -291,7 +291,7 @@ function PropertyAbout() {
 
 
         {/* Our Mission Section */}
-        <section className="py-20 bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
+        <section className="py-20 bg-[#9e8f72] text-white">
           <div className="container mx-auto px-6 md:px-12 lg:px-16 text-center">
             <h2 className="text-4xl font-bold">{missionSection[0]?.title}</h2>
             <p className="mt-6 text-lg max-w-2xl mx-auto">
