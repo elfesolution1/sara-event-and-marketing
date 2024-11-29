@@ -1,6 +1,6 @@
-# EthioTelecom Website
+# Sara Events and Marketing Website
 
-This project is a web application built for a Ethiotelecom . It leverages **Next.js**, **Tailwind CSS**, **Strapi CMS**, **GraphQL**, **PostgreSQL**, and **Docker** to deliver a scalable, responsive, and modern web experience.
+This project is a web application built for a Sara Events and Marketing . It leverages **Next.js**, **Tailwind CSS**, **Strapi CMS**, **GraphQL**, **PostgreSQL**, and **Docker** to deliver a scalable, responsive, and modern web experience.
 
 ## Table of Contents
 
@@ -70,7 +70,7 @@ This project is designed to provide telecom customers with a seamless online exp
   ```
 
 - **Strapi CMS:**
-  Configure Strapi CMS by setting up content types and permissions according to the ethiotelecom requirements.
+  Configure Strapi CMS by setting up content types and permissions according to the Sara Events and Marketing requirements.
 
 ### Usage
 

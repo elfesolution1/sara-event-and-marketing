@@ -170,6 +170,12 @@ const PropertyHeader = () => {
               {item?.title || 'Menu Item'}
             </Link>
           ))}
+           <Link
+            href={`${headerData?.headerContact?.url}`}
+            className={`text-[16px] text-white bg-[#969963] border border-[#969963] py-2 px-6 hover:bg-[#969963] hover:text-white rounded-3xl hover:transition-all duration-300 hover:shadow-lg ${isActiveButton('/property/contact')}`}
+          >
+            {headerData?.headerContact?.title || 'Contact Us'}
+          </Link>
         </nav>
       </motion.div>
     )}

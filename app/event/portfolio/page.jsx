@@ -42,6 +42,7 @@ function Portfolio() {
         );
         const data = await response.json();
         setGalleries(data?.data);
+        console.log('port image ', data?.data)
         setFilteredGalleries(data?.data);
         setIsLoading(true);
 
@@ -134,7 +135,7 @@ function Portfolio() {
         onClick={() => setActiveTab(tab)}
         className={`py-2 px-4 rounded-xl text-sm sm:text-base md:text-[16px] font-medium transition-all ${
           activeTab === tab
-            ? "bg-blue-600 text-white shadow-lg"
+            ? "bg-[#137a70] text-white shadow-lg"
             : "bg-gray-200 text-gray-700"
         }`}
       >
@@ -144,29 +145,37 @@ function Portfolio() {
   </div>
 
   {/* Gallery Images */}
-  <div className="w-11/12 flex flex-wrap justify-center gap-6">
-    {filteredGalleries.map((gallery, index) => {
-      const { image, Title } = gallery.attributes;
-      const imageUrl = image
-        ? `${image.data.attributes.formats.small.url || image.url}`
-        : null;
-      return (
-        <div
-          key={gallery.id}
-          className="relative p-2 transition-all cursor-pointer"
-          onClick={() => openLightbox(index)}
-        >
-          {imageUrl && (
-            <img
-              src={imageUrl}
-              alt={image.alternativeText || Title}
-              className={`w-[${imageSize.width}] h-[${imageSize.height}] object-cover rounded-lg shadow-lg transition-transform duration-300`}
-            />
-          )}
-        </div>
-      );
-    })}
-  </div>
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-[80%] mx-auto">
+  {filteredGalleries.map((gallery, index) => {
+    const { image, title, description } = gallery.attributes;
+    const imageUrl = image
+      ? `${image.data.attributes.formats.small.url || image.url}`
+      : null;
+
+    return (
+      <div
+      key={gallery.id}
+      className="relative  bg-white dark:bg-gray-800 pb-10 rounded-lg shadow-lg hover:shadow-2xl transition-all cursor-pointer transform hover:-translate-y-2 h-[400px] flex flex-col"
+      onClick={() => openLightbox(index)}
+    >
+      {imageUrl && (
+        <img
+          src={imageUrl}
+          alt={image.alternativeText || title}
+          className="w-full h-3/4 object-cover rounded-t-lg"
+        />
+      )}
+     <main className="pt-1 pb-5 px-4 ">
+     <h1 className="text-xl mt-2 font-medium capitalize font-semibold text-gray-900 dark:text-white">
+        {title}
+      </h1>
+      <p>{description} </p>
+     </main>
+    </div>
+    );
+  })}
+</div>
+
 
   {/* Lightbox */}
   {selectedImageIndex !== null && (

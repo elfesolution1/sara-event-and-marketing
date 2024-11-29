@@ -412,7 +412,7 @@ function PropertyAbout() {
         </section>
 
         {/* Our Team Section */}
-        <section className="py-20 bg-gradient-to-r dark:bg-[#1f2937]">
+        {/* <section className="py-20 bg-gradient-to-r dark:bg-[#1f2937]">
           <div className="container mx-auto px-6 md:px-12 lg:px-16">
             <h2 className="text-4xl font-bold text-center mb-12">Our Team</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 ">
@@ -426,7 +426,6 @@ function PropertyAbout() {
                   className=" shadow-lg bg-white rounded-lg transition-all px-6 py-3 dark:bg-[#111827]"
                 >
                   <div className="relative w-full h-48 mb-4 rounded-lg overflow-hidden">
-                    {/* Team Member Image */}
                     <img
                       src={`${member?.image?.data?.attributes?.url}`}
                       alt={`${member?.image?.data?.attributes?.alternativeText} image`}
@@ -442,7 +441,7 @@ function PropertyAbout() {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Testimonials Section */}
         <section className="py-20 bg-white dark:bg-[#111827]">

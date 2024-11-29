@@ -14,11 +14,12 @@ import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import "swiper/css/autoplay";
+import "swiper/css/autoplay"; 
 import { motion } from "framer-motion";
 import { getStrapiData } from "@/libs/api";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { Card, CardHeader, CardContent, CardTitle } from "@/components/ui/card";
 // Gallery Data
 
 function About() {
@@ -101,6 +102,22 @@ function About() {
             }
           }
         }
+           ... on ComponentLayoutServiceCard {
+              ServiceCard {
+                title
+                description
+                href
+                button
+                image {
+                  data {
+                    attributes {
+                      url
+                      alternativeText
+                    }
+                  }
+                }
+              }
+            }
            ... on ComponentLayoutWhyChooseUs{
           whyUsTitle{
             title,
@@ -213,7 +230,20 @@ function About() {
     );
   }
   // if (!aboutPageData) return <div>Loading...</div>;
-
+  const cardVariants = [
+    {
+      hidden: { opacity: 0, x: -100 }, // Slide from left
+      visible: { opacity: 1, x: 0, transition: { duration: 0.8, delay: 0.8 } },
+    },
+    {
+      hidden: { opacity: 0, y: 100 }, // Slide from bottom
+      visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.8 } },
+    },
+    {
+      hidden: { opacity: 0, x: 100 }, // Slide from right
+      visible: { opacity: 1, x: 0, transition: { duration: 0.8, delay: 0.8 } },
+    },
+  ];
   const { blocks } = aboutPageData;
   const heroData = blocks?.find(
     (block) => block.__typename === "ComponentComponentsImage"
@@ -236,6 +266,10 @@ function About() {
   const faqSection = blocks?.find(
     (block) => block.__typename === "ComponentLayoutFaq"
   );
+  const teamSection = blocks?.find(
+    (block) => block.__typename === "ComponentLayoutServiceCard"
+  );
+  console.log('team section ',teamSection.ServiceCard[0])
   const galleryImagess = gallerySection?.galleryImage?.data;
   // console.log("about data s", gallerySection);
   const prevImage = gallerySection?.prevNextImage?.data[0]?.url;
@@ -575,6 +609,35 @@ function About() {
     ))}
   </Swiper>
 </section>
+
+<section className="pb-10 bg-gradient-to-r dark:bg-[#1f2937]">
+          <div className="container mx-auto px-6 md:px-12 lg:px-16">
+            <h2 className="text-4xl font-bold text-center">Our <span className="text-[#137a70] text-bold"> Team</span></h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto dark:text-white text-center my-5">
+              {teamSection?.ServiceCard[0]?.href|| ""}
+            </p>
+            <div className="flex justify-center items-center ">
+  <Card className="shadow-lg w-96 bg-white rounded-lg transition-all dark:bg-[#111827]">
+    <div className="relative w-full h-48 mb-4 rounded-lg overflow-hidden">
+      <img
+        src={`${teamSection?.ServiceCard[0]?.image?.url}`}
+        alt={`${teamSection?.ServiceCard[0]?.image?.alternativeText} image`}
+        objectFit="cover"
+        className="rounded-y-lg w-full h-full object-cover"
+      />
+    </div>
+    <CardContent className="px-3 pt-2 pb-5">
+      <h3 className="text-2xl font-semibold">
+        {teamSection?.ServiceCard[0]?.button}
+      </h3>
+      <h4 className="text-[15px]">{teamSection?.ServiceCard[0]?.title}</h4>
+      <p className="text-lg mt-1">{teamSection?.ServiceCard[0]?.description}</p>
+    </CardContent>
+  </Card>
+</div>
+
+          </div>
+        </section>
 
       {/* FAQ Section */}
       <section className=" bg-[url('/bg2.jpg')] dark:bg-none bg-cover bg-center py-5 w-full">

@@ -174,6 +174,12 @@ const Header = () => {
               {item?.title || "Menu Item"}
             </Link>
           ))}
+           <Link
+            href={headerData?.headerContact?.url || '#'}
+            className={`text-[16px] border border-[#137a70] py-2 px-6 hover:bg-[#137a70] hover:text-white rounded-3xl hover:transition-all duration-300 hover:shadow-lg ${isActiveButton("/contact")}`}
+          >
+            {headerData?.headerContact?.title || "Contact"}
+          </Link>
         </nav>
       </motion.div>
     )}
