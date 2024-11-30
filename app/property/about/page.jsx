@@ -123,7 +123,6 @@ function PropertyAbout() {
           (item) => item.__typename === "ComponentLayoutPropertyAboutUs"
         );
       setAboutUsSections(filteredAboutSections);
-      // console.log("about ", filteredAboutSections[0]);
     }
 
     if (aboutData) {
@@ -132,7 +131,6 @@ function PropertyAbout() {
           (item) => item.__typename === "ComponentComponentsLink"
         );
       setMissionSection(filteredMissionSections);
-      // console.log("mission ", filteredMissionSections[0]);
     }
 
     if (aboutData) {
@@ -141,7 +139,6 @@ function PropertyAbout() {
           (item) => item.__typename === "ComponentLayoutServiceCard"
         );
       setTeamSection(filteredTeamSections);
-      // console.log("team ", filteredTeamSections[0]);
     }
 
     if (aboutData) {
@@ -150,7 +147,6 @@ function PropertyAbout() {
           (item) => item.__typename === "ComponentLayoutTestimonial"
         );
       setTestimonialSection(filteredTestimonialSections);
-      console.log("testimonial", filteredTestimonialSections[0]);
     }
 
     if (aboutData) {
@@ -159,7 +155,6 @@ function PropertyAbout() {
           (item) => item.__typename === "ComponentLayoutOurAcheivement"
         );
       setMileStoneSections(filteredMileStoneSections);
-      console.log("milestone", filteredMileStoneSections[0].acheivementCard);
     }
     if (aboutData) {
       const filteredPartnerSections =
@@ -167,7 +162,6 @@ function PropertyAbout() {
           (item) => item.__typename === "ComponentLayoutPartners"
         );
       setPartnerSections(filteredPartnerSections);
-      console.log("partner", filteredPartnerSections[0].partnerImage);
     }
   }, [aboutData]);
 
