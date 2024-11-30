@@ -73,7 +73,6 @@ function Service() {
   }
   const { blocks } = servicePageData;
   const serviceData = blocks[0];
-  console.log("service ", serviceData?.ServiceCard);
   const cardVariants = [
     {
       hidden: { opacity: 0, x: -100 }, // Slide from left
