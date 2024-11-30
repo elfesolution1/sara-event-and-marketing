@@ -115,7 +115,6 @@ function ProductsAndMovie() {
 
   const serviceContent = contactData?.serviceContent;
   const serviceDetail = contactData?.serviceDetail2;
-  console.log("event ", serviceDetail[0]?.children[0]?.text);
   const baseImageUrl = process.env.NEXT_PUBLIC_API_URL;
 
   const openLightbox = (src) => {
@@ -214,9 +213,7 @@ function ProductsAndMovie() {
                   className="relative group cursor-pointer"
                   onClick={() => openLightbox(image ?? '')}
                 >
-                  {
-              console.log('galler is is ',image)
-                  }
+                 
                   <img
                     src={`${image ?? ''}`}
                     alt={image?.alt ?? 'Image'}
