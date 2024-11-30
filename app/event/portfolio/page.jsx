@@ -42,7 +42,6 @@ function Portfolio() {
         );
         const data = await response.json();
         setGalleries(data?.data);
-        console.log('port image ', data?.data)
         setFilteredGalleries(data?.data);
         setIsLoading(true);
 
