@@ -225,7 +225,7 @@ function ContactPage() {
 
                 <button
                   type="submit"
-                  className="px-8 py-3 bg-blue-600 dark:bg-blue-700 text-white font-semibold rounded-lg hover:bg-blue-700 dark:hover:bg-blue-800 transition-transform transform hover:scale-105"
+                  className="px-8 py-3 bg-[#9e8f72] dark:bg-[#9e8f72] text-white font-semibold rounded-lg hover:bg-blue-700 dark:hover:bg-blue-800 transition-transform transform hover:scale-105"
                 >
                   Send Message
                 </button>
