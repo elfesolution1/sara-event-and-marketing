@@ -290,7 +290,6 @@ export default function Home() {
       }
       `;
       const articles = await getStrapiData(query);
-      console.log('data is ',articles?.homepage)
       setHomePageData(articles?.homepage);
       setIsLoading(true);
     };
@@ -312,7 +311,6 @@ export default function Home() {
   // if (!homePageData) return <div>Loading...</div>;
 
   const { blocks } = homePageData;
-  console.log('blocks ',blocks)
   const heroData = blocks?.find(
     (block) => block.__typename === "ComponentLayoutHero"
   );
