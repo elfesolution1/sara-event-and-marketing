@@ -211,7 +211,6 @@ function About() {
       `;
       const articles = await getStrapiData(query);
       setAboutPageData(articles?.aboutPage);
-      console.log('abouttt',articles?.aboutPage);
       setIsLoading(true);
     };
 
@@ -269,9 +268,7 @@ function About() {
   const teamSection = blocks?.find(
     (block) => block.__typename === "ComponentLayoutServiceCard"
   );
-  console.log('team section ',teamSection.ServiceCard[0])
   const galleryImagess = gallerySection?.galleryImage?.data;
-  // console.log("about data s", gallerySection);
   const prevImage = gallerySection?.prevNextImage?.data[0]?.url;
   const nextImage = gallerySection?.prevNextImage?.data[1]?.url;
   const goToNextImage = () => {
