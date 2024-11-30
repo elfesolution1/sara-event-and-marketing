@@ -273,7 +273,6 @@ const PropertyHome = React.memo(function PropertyHome() {
     }
 
     if (propertyData) {
-      // console.log("data is ", propertyData);
       const mappedProperties = propertyData?.propertyLists?.data?.map((item) => ({
         id: item?.id,
         title: item?.attributes?.Title,
