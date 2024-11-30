@@ -625,7 +625,7 @@ export default function Home() {
   </section>
 
   {/* Portfolio Section */}
-  <section className="py-12 text-center  dark:bg-none bg-cover bg-center min-h-screen w-full">
+  <section className="pb-6 text-center  dark:bg-none bg-cover bg-center min-h-screen w-full">
     <div className="text-center">
       <h1 className="text-4xl font-bold text-gray-800 mb-4 dark:text-white">
         Our <span className="text-[#137a70] font-bold">Portfolio</span>
@@ -706,7 +706,7 @@ export default function Home() {
 
     </div>
   </section>
-  <section className=" dark:bg-gray-900 py-12 mb-5">
+  <section className=" dark:bg-gray-900 pb-12 mb-5">
       <div className="container mx-auto px-6 lg:px-20">
         <div className="flex flex-col lg:flex-row items-center lg:justify-between">
           {/* Working Hours */}
