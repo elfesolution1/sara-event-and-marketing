@@ -224,12 +224,17 @@ const PropertyFooter = () => {
   
       <div>
         <hr className="w-[80%] h-[2px] bg-[#969963] mx-auto" />
-        <p className="text-center py-5 text-black dark:text-white">
-          Developed by{" "}
-          <Link target="_blank" href="https://elfedigital.com/" className="text-[#f94c30]">
-            Elfe Digital
-          </Link>
-        </p>
+        <p className="text-center py-3 text-black dark:text-white">
+       © 2024 Developed by{" "}
+        <Link
+          target="_blank"
+          href="https://elfedigital.com/"
+          className="text-[#f94c30]"
+        >
+          Elfe Digital
+        </Link>
+         . ALL RIGHTS RESERVED
+      </p>
       </div>
     </main>
   </footer>
