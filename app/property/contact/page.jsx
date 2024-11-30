@@ -133,7 +133,6 @@ function ContactPage() {
           (item) => item.__typename === "ComponentLayoutContactInfo"
         );
       setContactInfo(filteredContactSections);
-      console.log("Filtered Contact Info:", filteredContactSections[0]);
     }
     setIsLoading(true);
   }, [contactData]);
