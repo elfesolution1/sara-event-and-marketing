@@ -148,7 +148,6 @@ const FindProperty = () => {
       }));
 
       setProperties(mappedProperties);
-      console.log("prop is", mappedProperties);
       // Extract unique locations
       const uniqueLocations = [
         ...new Set(mappedProperties?.map((property) => property?.location)),
