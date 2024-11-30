@@ -71,7 +71,6 @@ function CharityEvent() {
       `;
       const articles = await getStrapiData(query);
       setEventPageData(articles?.charityEvent);
-      console.log('article is ', articles?.charityEvent);
       setIsLoading(true);
     };
 
@@ -115,7 +114,6 @@ function CharityEvent() {
 
   const serviceContent = contactData?.serviceContent;
   const serviceDetail = contactData?.serviceDetail2;
-  console.log("event ", serviceDetail[0]?.children[0]?.text);
   const baseImageUrl = process.env.NEXT_PUBLIC_API_URL;
 
   const openLightbox = (src) => {
@@ -215,9 +213,7 @@ function CharityEvent() {
                   className="relative group cursor-pointer"
                   onClick={() => openLightbox(image ?? '')}
                 >
-                  {
-              console.log('galler is is ',image)
-                  }
+                  
                   <img
                     src={`${image ?? ''}`}
                     alt={image?.alt ?? 'Image'}
