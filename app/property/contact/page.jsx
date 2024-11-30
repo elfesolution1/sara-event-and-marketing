@@ -271,7 +271,7 @@ function ContactPage() {
         </section>
 
         {/* Google Map Section */}
-        <section className="w-[85%] h-80 rounded-md">
+        <section className="w-[85%] h-80 rounded-md mb-5">
           <iframe
             title="Our Location"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3110.6617375108665!2d-123.11622608465384!3d37.77492927975945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb17f676b15447998!2z44CSMTE4NyA0M1ot!5e0!3m2!1sen!2sus!4v1635819021223!5m2!1sen!2sus"
