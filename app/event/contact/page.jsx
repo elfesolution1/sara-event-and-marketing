@@ -144,7 +144,6 @@ function Contact() {
       }
       `;
       const articles = await getStrapiData(query);
-      console.log("cont is ", articles);
       setContactPageData(articles?.contactPage);
       setIsLoading(true);
     };
@@ -171,7 +170,6 @@ function Contact() {
   const contactData = blocks?.find(
     (block) => block.__typename === "ComponentLayoutContactInfo"
   );
-  console.log("contact ", contactData?.getInTouch);
   const baseImageUrl = process.env.NEXT_PUBLIC_API_URL;
   return (
     <>
