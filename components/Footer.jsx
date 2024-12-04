@@ -105,7 +105,7 @@ const Footer = () => {
   return (
     <footer className="text-white  relative">
   {/* CTA Section */}
-  <div className="bg-[#137a70] w-[80%] mx-auto shadow-2xl rounded-2xl flex flex-col md:flex-row justify-between items-center px-6 py-8 md:py-12 -mb-16 relative z-10">
+  <div className="bg-[#137a70] w-[96%] lg:w-[96%] mx-auto shadow-2xl rounded-2xl flex flex-col md:flex-row justify-between items-center px-6 py-8 md:py-12 -mb-16 relative z-10">
     <div className="space-y-4 w-full md:w-[65%]">
       <h1 className="text-3xl font-medium">{footerData?.ctaTitle}</h1>
       <p>{footerData?.ctaDescription}</p>
@@ -120,8 +120,8 @@ const Footer = () => {
     </div>
   </div>
 
-  <main className="border-t border-t-gray-200 bg-[#D9D9D921] pt-20">
-    <div className="w-full py-10 text-black flex flex-col md:flex-row items-start justify-around">
+  <main className="border-t border-t-gray-200 bg-[#D9D9D921] pt-20 text-center">
+    <div className="w-full py-10 text-black flex flex-col md:flex-row items-start justify-around text-center">
       <div className="w-full md:w-[30%] space-y-5">
         <Link href="/">
           <img
@@ -132,7 +132,7 @@ const Footer = () => {
           />
         </Link>
         <p className="dark:text-white">{footerData?.description}</p>
-        <div className="flex items-center justify-around gap-2 w-[60%]">
+        <div className="flex items-center justify-around gap-2 w-[60%] ml-6">
           {footerData?.footerSocialMedia?.map((item, index) => {
             const imageUrl = item?.image?.data?.[0]?.url;
             const altText = item?.image?.alternativeText || "Social Media Icon";
@@ -156,7 +156,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <main className="w-full md:w-[60%] flex flex-col md:flex-row justify-around items-start gap-2">
+      <main className="w-full md:w-[60%] flex flex-col md:flex-row justify-around items-start gap-2 ml-6">
         <div className="space-y-3">
           <h2 className="text-xl text-[#137a70]">Event Link</h2>
           <div className="flex flex-col items-start gap-2 dark:text-white">
@@ -189,7 +189,7 @@ const Footer = () => {
 
         <div className="space-y-2">
           <h1 className="text-xl text-[#137a70] mb-5">Contact Info</h1>
-          <div className="flex flex-col gap-4 items-start justify-around">
+          <div className="flex flex-col gap-4 items-start justify-around ">
             {footerData?.contactInfo?.map((item, index) => {
               const imageUrl = item?.image?.data?.[0]?.url;
               const altText = item?.image?.alternativeText || "Contact Icon";
