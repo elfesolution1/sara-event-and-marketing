@@ -101,7 +101,7 @@ function Service() {
       <section className="hero-section relative w-full h-[50vh]">
         <div className="relative w-full h-full">
           <img
-            src="https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732695348/background_673f9666d7.jpg"
+            src="https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732695348/background__673f9666d7.jpg"
             alt="alt"
             fill
             className="w-full h-full object-cover"
