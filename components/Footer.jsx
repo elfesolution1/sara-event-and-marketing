@@ -145,6 +145,7 @@ const Footer = () => {
                     alt={altText}
                     width={30}
                     height={30}
+                    color={#1b6f62}
                     className="hover:text-[#d3ebdf] hover:scale-125 transition-all duration-300 shadow-lg"
                   />
                 ) : (
