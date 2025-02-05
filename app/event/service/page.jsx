@@ -123,8 +123,7 @@ function Service() {
       Our <span className="text-[#137a70] font-bold">Service</span>
     </h1>
     <p className="text-lg text-gray-600 max-w-2xl mx-auto dark:text-white">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      Perferendis, repellendus nulla. Praesentium
+      
     </p>
   </div>
 
