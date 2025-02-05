@@ -104,7 +104,7 @@ function Service() {
             src="https://res.cloudinary.com/dkqlrnz6r/image/upload/v1732695348/background_2_673f9666d7.jpg"
             alt="alt"
             fill
-            className="w-full h-full object-cover"
+            className="w-full h-full "
           />
           <div className="absolute inset-0  bg-[#1C244B]  bg-opacity-50 flex items-center p-8">
             <div className="text-white text-left max-w-lg ml-12">
