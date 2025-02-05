@@ -221,7 +221,7 @@ const Footer = () => {
     <div>
       <hr className="w-[80%] h-[2px] bg-[#137a70] mx-auto" />
       <p className="text-center py-3 text-black dark:text-white">
-       © 2024 Developed by{" "}
+       © 2025 Developed by{" "}
         <Link
           target="_blank"
           href="https://elfedigital.com/"
