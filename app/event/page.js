@@ -629,7 +629,7 @@ export default function Home() {
         Our <span className="text-[#137a70] font-bold">Portfolio</span>
       </h1>
       <p className="text-lg text-gray-600 max-w-2xl mx-auto dark:text-white dark:font-normal">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+        
       </p>
     </div>
     <div className="dark:bg-none min-h-screen flex flex-col items-center py-10">
