@@ -245,6 +245,7 @@ function Contact() {
                     {item?.title}
                   </h3>
                 </div>
+                
                 <p className="text-gray-600 dark:text-gray-300 font-medium">
                   {item?.button}
                 </p>
