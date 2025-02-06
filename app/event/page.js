@@ -599,7 +599,7 @@ export default function Home() {
       onEnter={() => setCounterOn(true)}
       onExit={() => setCounterOn(false)}
     >
-      <div className="bg-[#1F995E] w-[80%] mx-auto rounded-2xl">
+      <div className="bg-[#137a70] w-[80%] mx-auto rounded-2xl">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-[80%] mx-auto">
           {acheivementSection?.acheivementCard?.map((item, index) => (
             <div
