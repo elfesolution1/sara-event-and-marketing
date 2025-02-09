@@ -83,7 +83,7 @@ function Page() {
               </CardHeader>
               <CardContent className="p-4">
                 <CardTitle className="text-xl text-center font-semibold text-gray-800 mb-3 dark:text-[#1F995E]">
-                  Event Management
+                  Events Management
                 </CardTitle>
                 <CardDescription className="text-gray-600 mb-4 dark:text-white">
                   <ul className="list-disc ml-4 font-medium text-[16px] space-y-2">
